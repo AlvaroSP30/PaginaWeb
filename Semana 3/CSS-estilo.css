@@ -1,90 +1,153 @@
-/* style.css */
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Fuente general */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f6f8;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+    font-family: 'Inter', sans-serif; /* Asegúrate de importar Inter desde Google Fonts si no lo tienes */
+    background-color: #f9fafb;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Encabezado */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Header */
 .header {
-  background-color: #0d6efd;
-  color: #fff;
-  padding: 2rem 1rem;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(248, 248, 248, 0.1);
+    background-color: #1f2937;
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1rem;
+    border-bottom: 4px solid #3b82f6;
 }
 
-.header h1 {
-  margin-bottom: 0.5rem;
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
 }
 
-/* Contenido principal */
-.content {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
 }
 
-article {
-  margin-bottom: 3rem;
+/* Blog Cards */
+.blog-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
 }
 
-article h2 {
-  color: #0d6efd;
-  margin-bottom: 1rem;
+.blog-card:hover {
+    transform: translateY(-4px);
 }
 
-ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
+.blog-card h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.blog-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #3b82f6;
+}
+
+.blog-card h4 { /* Estilo para los sub-conceptos dentro de <h3> */
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #007bff; /* Un color secundario para los sub-títulos */
+}
+
+.blog-card p {
+    margin-bottom: 1rem;
+}
+
+.blog-card ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.blog-card ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.blog-card li {
+    list-style-type: disc;
+    margin-bottom: 0.5rem;
+}
+
+.blog-card ol li {
+    list-style-type: decimal;
+}
+
+
+/* Para la anidación de listas */
+.blog-card ul ul, .blog-card ol ul, .blog-card ul ol {
+    list-style-type: circle;
+    margin-top: 0.5rem;
+}
+
+pre {
+    background-color: #e8e8e8;
+    padding: 1rem;
+    border-left: 4px solid #3b82f6;
+    overflow-x: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-size: 0.9em;
 }
 
 code {
-  background-color: #eee;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-family: monospace;
+    font-family: 'Consolas', 'Monaco', monospace;
+    color: #d14; /* Color para código en línea */
+}
+pre code {
+    color: #333; /* Color para bloques de código */
 }
 
-/* Pie de página */
+.note {
+    background-color: #e6f7ff;
+    border-left: 5px solid #3399ff;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: #333;
+}
+
+/* Footer */
 .footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #e9ecef;
-  color: #6c757d;
-  font-size: 0.9rem;
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #1f2937;
+    color: #e5e7eb;
+    font-size: 0.9rem;
+    margin-top: 2rem;
 }
 
-main {
-  background-color: #f9fafb; /* Fondo muy claro */
-  font-family: 'Inter', sans-serif;
-  color: #374151; /* gris oscuro para texto */
+/* Estilo para los enlaces dentro de las notas */
+.note a {
+    color: #007bff;
+    text-decoration: underline;
 }
 
-article {
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-h2 {
-  color: #111827; /* casi negro para títulos */
-  margin-bottom: 1rem;
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-p {
-  margin-bottom: 1rem;
-  color: #4b5563; /* gris medio para párrafos */
-  line-height: 1.6;
+.note a:hover {
+    text-decoration: none;
 }
