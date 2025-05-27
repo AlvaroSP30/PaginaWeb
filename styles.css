@@ -2,21 +2,24 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #1e293b;
+    background-color: #f1f5f9;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 /* Barra de navegación */
 .navbar {
     background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
     position: fixed;
     width: 100%;
     top: 0;
@@ -24,13 +27,16 @@ body {
 }
 
 .nav-link {
-    color: #333;
+    color: #1e293b;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: all 0.3s;
 }
 
 .nav-link:hover {
+    background-color: #e2e8f0;
     color: #3b82f6;
 }
 
@@ -42,29 +48,32 @@ body {
 
 /* Botones */
 .btn-primary {
-    display: inline-block;
     background-color: #3b82f6;
     color: white;
     padding: 12px 24px;
-    border-radius: 6px;
-    text-decoration: none;
+    border-radius: 8px;
     font-weight: 600;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
 }
 
 .btn-primary:hover {
     background-color: #2563eb;
+    transform: translateY(-2px);
 }
 
 .btn-secondary {
-    display: inline-block;
     border: 2px solid #3b82f6;
     color: #3b82f6;
     padding: 10px 22px;
-    border-radius: 6px;
-    text-decoration: none;
+    border-radius: 8px;
     font-weight: 600;
-    transition: all 0.3s;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
 }
 
 .btn-secondary:hover {
@@ -87,33 +96,37 @@ body {
     width: 60px;
     height: 3px;
     background-color: #3b82f6;
+    border-radius: 3px;
 }
 
 /* Tarjetas de habilidades */
 .skill-item {
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
 /* Formulario de contacto */
 .contact-form input,
 .contact-form textarea {
-    transition: border-color 0.3s, box-shadow 0.3s;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     border-color: #3b82f6;
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    outline: none;
 }
 
 /* Footer */
 .footer {
     background-color: #1e293b;
+    color: #f1f5f9;
+    font-size: 0.9rem;
 }
 
 /* Responsive */
@@ -121,13 +134,22 @@ body {
     .nav-links {
         display: none;
     }
-    
-    .hero-text, .hero-image {
+
+    .hero-text,
+    .hero-image {
         width: 100% !important;
         text-align: center;
     }
-    
+
     .buttons {
         justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
     }
 }
