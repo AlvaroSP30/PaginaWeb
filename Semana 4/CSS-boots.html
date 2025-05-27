@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS con Bootstrap y Tailwind</title>
+  <link rel="stylesheet" href="CSS-boots.estilo.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="title">Frameworks CSS: Bootstrap vs Tailwind</h1>
+      <p class="subtitle">Conoce las diferencias, ventajas y cómo aplicarlos en tus proyectos web</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="blog-card">
+      <h2>¿Qué es Bootstrap?</h2>
+      <p>Bootstrap es un framework CSS open-source creado por Twitter para facilitar el desarrollo de aplicaciones web responsivas y modernas. Utiliza una estructura basada en una grilla de 12 columnas y proporciona una serie de clases predefinidas para dar estilo rápidamente.</p>
+
+      <h3>Características clave</h3>
+      <ul>
+        <li>Clases CSS listas para usar: <code>.btn</code>, <code>.container</code>, <code>.alert</code>, etc.</li>
+        <li>Sistema responsive que se adapta a todo tipo de dispositivos.</li>
+        <li>Incluye JavaScript para interactividad (modales, sliders, tooltips, etc.).</li>
+      </ul>
+
+      <h3>Casos de uso comunes</h3>
+      <p>Ideal para proyectos donde se necesita velocidad de desarrollo, prototipado o cuando se requiere un diseño uniforme y limpio sin crear todo desde cero.</p>
+    </article>
+
+    <article class="blog-card">
+      <h2>¿Qué es Tailwind CSS?</h2>
+      <p>Tailwind CSS es un framework de clases utilitarias que te permite construir diseños personalizados directamente en tu HTML sin escribir CSS tradicional. En lugar de usar componentes predefinidos, tú defines el estilo aplicando utilidades como <code>bg-red-500</code> o <code>text-center</code>.</p>
+
+      <h3>Principios fundamentales</h3>
+      <ul>
+        <li>Utility-first: cada clase aplica un solo estilo (ej. <code>p-4</code> = padding: 1rem).</li>
+        <li>Personalización extrema mediante el archivo de configuración <code>tailwind.config.js</code>.</li>
+        <li>Compatible con JIT (Just-In-Time) para compilar sólo las clases usadas.</li>
+      </ul>
+
+      <h3>Ideal para:</h3>
+      <p>Proyectos que buscan un diseño único, escalabilidad y control total sobre el aspecto visual de los componentes sin depender de estilos prediseñados.</p>
+    </article>
+
+    <article class="blog-card">
+      <h2>Diferencias principales</h2>
+      <ul>
+        <li><strong>Bootstrap</strong>: más rápido para comenzar, ideal para prototipos y diseño estándar.</li>
+        <li><strong>Tailwind</strong>: más flexible y potente a largo plazo para proyectos personalizados.</li>
+        <li>Bootstrap tiene una curva de aprendizaje menor, mientras que Tailwind requiere acostumbrarse al enfoque utility-first.</li>
+      </ul>
+    </article>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 - Blog CSS. Diseñado por Alvaro Pinares Taype</p>
+    </div>
+  </footer>
+</body>
+</html>

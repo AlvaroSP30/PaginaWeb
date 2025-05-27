@@ -1,0 +1,91 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Header */
+.header {
+  background-color: #1f2937;
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1rem;
+  border-bottom: 4px solid #3b82f6;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* Blog Cards */
+.blog-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+}
+
+.blog-card h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.blog-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #3b82f6;
+}
+
+.blog-card p {
+  margin-bottom: 1rem;
+}
+
+.blog-card ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.blog-card li {
+  list-style-type: disc;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #1f2937;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
