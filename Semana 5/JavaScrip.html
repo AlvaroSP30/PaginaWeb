@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoría y Conceptos de JavaScript</title>
+    <link rel="stylesheet" href="JavaS.estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1 class="title">JavaScript: El Lenguaje de la Interactividad</h1>
+        <p class="subtitle">Descubre los fundamentos y el poder de JavaScript para el desarrollo web moderno.</p>
+    </header>
+
+    <div class="container">
+        <div class="blog-card">
+            <h2>Introducción</h2>
+            <p>JavaScript (JS) es un lenguaje de programación de alto nivel, interpretado o compilado Just-in-Time, multiparadigma, dinámico y débilmente tipado. Es fundamental para el desarrollo web front-end, permitiendo crear páginas web interactivas y dinámicas. Sin embargo, su alcance ha crecido exponencialmente, abarcando el desarrollo back-end (con Node.js), aplicaciones móviles (con React Native, NativeScript), aplicaciones de escritorio (con Electron), e incluso Internet de las Cosas (IoT) y machine learning.</p>
+        </div>
+
+        <div class="blog-card">
+            <h2>1. Origen e Historia Breve</h2>
+            <ul>
+                <li><strong>Creador:</strong> Brendan Eich</li>
+                <li><strong>Año de creación:</strong> 1995</li>
+                <li><strong>Propósito inicial:</strong> Añadir interactividad a las páginas web en el navegador Netscape Navigator.</li>
+                <li><strong>Nombre inicial:</strong> Mocha, luego LiveScript, y finalmente JavaScript (una estrategia de marketing para capitalizar la popularidad de Java en ese momento, aunque son lenguajes fundamentalmente diferentes).</li>
+                <li><strong>Estandarización:</strong> ECMAScript (ES) es la especificación del lenguaje. JavaScript es la implementación más conocida de ECMAScript. La especificación es mantenida por ECMA International.</li>
+            </ul>
+        </div>
+
+        <div class="blog-card">
+            <h2>2. Características Clave</h2>
+            <ul>
+                <li><strong>Lenguaje Interpretado o JIT Compilado:</strong> Tradicionalmente era interpretado. Hoy en día, los motores de JavaScript utilizan compilación Just-in-Time (JIT) para optimizar el rendimiento.</li>
+                <li><strong>Multiparadigma:</strong> Permite programar utilizando diferentes estilos:
+                    <ul>
+                        <li><strong>Programación Orientada a Objetos (POO):</strong> Basado en prototipos.</li>
+                        <li><strong>Programación Funcional:</strong> Admite funciones como "ciudadanos de primera clase".</li>
+                        <li><strong>Programación Imperativa:</strong> Define una secuencia de pasos.</li>
+                    </ul>
+                </li>
+                <li><strong>Dinámico:</strong>
+                    <ul>
+                        <li><strong>Tipado Dinámico:</strong> El tipo de una variable se determina en tiempo de ejecución.</li>
+                        <li><strong>Creación de objetos y propiedades en tiempo de ejecución.</strong></li>
+                    </ul>
+                </li>
+                <li><strong>Débilmente Tipado:</strong> Permite la coerción de tipos automática. Por ejemplo:
+                    <pre><code>console.log(5 + '5'); // Resultado: '55'</code></pre>
+                </li>
+                <li><strong>Orientado a Eventos:</strong> Permite que el código reaccione a acciones del usuario o eventos del sistema.</li>
+                <li><strong>Sincrónico y de Hilo Único (Single-Threaded):</strong> Ejecuta el código en un solo hilo. La asincronía se maneja a través del "event loop".</li>
+            </ul>
+        </div>
+
+        <div class="blog-card">
+            <h2>3. Conceptos Fundamentales</h2>
+
+            <h3>a. Variables y Tipos de Datos</h3>
+            <ul>
+                <li><strong>Variables:</strong> Contenedores para almacenar datos.</li>
+                    <ul>
+                        <li><code>var</code>: Declaración antigua. Alcance de función o global.</li>
+                        <li><code>let</code>: (ES6+) Alcance de bloque (<code>{}</code>). Preferido.</li>
+                        <li><code>const</code>: (ES6+) Alcance de bloque. Para valores que no cambiarán.</li>
+                    </ul>
+                <li><strong>Tipos de Datos Primitivos:</strong>
+                    <ul>
+                        <li><code>string</code>: Cadena de texto (ej. <code>"Hola Mundo"</code>)</li>
+                        <li><code>number</code>: Números enteros y de punto flotante (ej. <code>10</code>, <code>3.14</code>)</li>
+                        <li><code>boolean</code>: Valores de verdad (<code>true</code>, <code>false</code>)</li>
+                        <li><code>null</code>: Ausencia intencional de valor.</li>
+                        <li><code>undefined</code>: Variable declarada pero no asignada.</li>
+                        <li><code>symbol</code>: (ES6+) Valores únicos e inmutables.</li>
+                        <li><code>bigint</code>: (ES2020) Para números enteros muy grandes.</li>
+                    </ul>
+                </li>
+                <li><strong>Tipo de Datos No Primitivos (Objeto):</strong>
+                    <ul>
+                        <li><code>object</code>: Colecciones de datos y funcionalidades. Incluye:
+                            <ul>
+                                <li><strong>Objetos Literales:</strong> <code>{ nombre: "Juan", edad: 30 }</code></li>
+                                <li><strong>Arrays (Arreglos):</strong> <code>[1, 2, 3, "texto"]</code></li>
+                                <li><strong>Funciones:</strong> (también son objetos de "primera clase")</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>b. Operadores</h3>
+            <ul>
+                <li><strong>Aritméticos:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>**</code></li>
+                <li><strong>Asignación:</strong> <code>=</code>, <code>+=</code>, <code>-=</code>, etc.</li>
+                <li><strong>Comparación:</strong> <code>==</code> (débil), <code>===</code> (estricta), <code>!=</code>, <code>!==</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></li>
+                <li><strong>Lógicos:</strong> <code>&&</code> (AND), <code>||</code> (OR), <code>!</code> (NOT)</li>
+            </ul>
+
+            <h3>c. Estructuras de Control de Flujo</h3>
+            <ul>
+                <li><strong>Condicionales:</strong>
+                    <ul>
+                        <li><code>if / else if / else</code></li>
+                        <li><code>switch</code></li>
+                    </ul>
+                </li>
+                <li><strong>Bucles (Loops):</strong>
+                    <ul>
+                        <li><code>for</code></li>
+                        <li><code>while</code></li>
+                        <li><code>do...while</code></li>
+                        <li><code>for...in</code> (propiedades de objeto)</li>
+                        <li><code>for...of</code> (ES6+, valores de iterables)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>d. Funciones</h3>
+            <ul>
+                <li>Bloques de código reutilizable.</li>
+                <li><strong>Declaración de Función:</strong>
+                    <pre><code>function saludar(nombre) {
+    return "Hola, " + nombre + "!";
+}
+console.log(saludar("María"));</code></pre>
+                </li>
+                <li><strong>Expresión de Función:</strong>
+                    <pre><code>const despedir = function(nombre) {
+    return "Adiós, " + nombre + "!";
+};
+console.log(despedir("Pedro"));</code></pre>
+                </li>
+                <li><strong>Funciones Flecha (Arrow Functions) (ES6+):</strong>
+                    <pre><code>const sumar = (a, b) => a + b;
+console.log(sumar(5, 3));</code></pre>
+                </li>
+                <li><strong>Alcance (Scope):</strong> Global, de Función, de Bloque.</li>
+                <li><strong>Clausuras (Closures):</strong> Función que recuerda su entorno léxico.</li>
+            </ul>
+
+            <h3>e. Objetos y Programación Orientada a Objetos (POO) en JS</h3>
+            <ul>
+                <li><strong>Concepto de Objeto:</strong> Colección de propiedades y métodos.</li>
+                <li><strong>Creación de Objetos:</strong>
+                    <ul>
+                        <li><strong>Literal de Objeto:</strong>
+                            <pre><code>const persona = {
+    nombre: "Ana",
+    edad: 25,
+    saludar: function() {
+        console.log("Hola!");
+    }
+};
+persona.saludar();</code></pre>
+                        </li>
+                        <li><strong>Clases (ES6+):</strong> Sintaxis azucarada sobre los prototipos.
+                            <pre><code>class Coche {
+    constructor(marca) {
+        this.marca = marca;
+    }
+    arrancar() {
+        console.log(this.marca + " ha arrancado.");
+    }
+}
+const miCoche = new Coche("Toyota");
+miCoche.arrancar();</code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Prototipos:</strong> Mecanismo fundamental de herencia.</li>
+                <li><strong><code>this</code>:</strong> Su valor depende del contexto de ejecución.</li>
+            </ul>
+
+            <h3>f. Asincronía en JavaScript</h3>
+            <p>JavaScript maneja operaciones largas sin bloquear el hilo principal.</p>
+            <ul>
+                <li><strong>Callbacks:</strong> Funciones que se ejecutan al completar una operación asíncrona.</li>
+                <li><strong>Promises (Promesas) (ES6+):</strong> Objetos que representan la eventual finalización de una operación.
+                    <pre><code>// Ejemplo simplificado de una promesa
+const miPromesa = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        const exito = true; // Simula una operación exitosa o fallida
+        if (exito) {
+            resolve("Datos obtenidos correctamente");
+        } else {
+            reject("Error al obtener datos");
+        }
+    }, 1000);
+});
+
+miPromesa
+    .then(mensaje => console.log(mensaje))
+    .catch(error => console.error(error));</code></pre>
+                </li>
+                <li><strong>Async/Await (ES2017+):</strong> Sintaxis para trabajar con Promesas de forma más síncrona.
+                    <pre><code>async function obtenerDatosSimulados() {
+    try {
+        const respuesta = await new Promise(resolve => setTimeout(() => resolve("Datos del servidor"), 1500));
+        console.log(respuesta);
+    } catch (error) {
+        console.error('Ha ocurrido un error:', error);
+    }
+}
+obtenerDatosSimulados();</code></pre>
+                </li>
+                <li><strong>Event Loop:</strong> Mecanismo que permite a JS manejar la asincronía.</li>
+            </ul>
+
+            <h3>g. Manipulación del DOM (Document Object Model)</h3>
+            <p>JavaScript interactúa con la estructura HTML como un árbol de nodos.</p>
+            <ul>
+                <li><strong>Seleccionar elementos:</strong>
+                    <pre><code>const miElemento = document.getElementById('miId');
+const elementosClase = document.querySelectorAll('.miClase');</code></pre>
+                </li>
+                <li><strong>Modificar contenido:</strong>
+                    <pre><code>miElemento.textContent = 'Nuevo Contenido';
+miElemento.innerHTML = '&lt;strong&gt;Contenido HTML&lt;/strong&gt;';</code></pre>
+                </li>
+                <li><strong>Cambiar estilos:</strong>
+                    <pre><code>miElemento.style.color = 'blue';
+miElemento.style.fontSize = '20px';</code></pre>
+                </li>
+                <li><strong>Manejar eventos:</strong>
+                    <pre><code>const boton = document.getElementById('miBoton');
+boton.addEventListener('click', function() {
+    alert('¡Botón clickeado!');
+});</code></pre>
+                </li>
+            </ul>
+        </div> <div class="blog-card">
+            <h2>4. Entornos de Ejecución de JavaScript</h2>
+            <ul>
+                <li><strong>Navegadores Web:</strong> El entorno original y más común (Chrome, Firefox, Safari).</li>
+                <li><strong>Node.js:</strong> Entorno de ejecución de JavaScript del lado del servidor. Permite construir APIs, herramientas de línea de comandos, etc.
+                    <pre><code>// Ejemplo simple en Node.js (guardar como app.js y ejecutar con 'node app.js')
+console.log("¡Hola desde Node.js!");
+const http = require('http');
+http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Servidor Node.js funcionando!\n');
+}).listen(3000);
+console.log('Servidor corriendo en http://localhost:3000/');</code></pre>
+                </li>
+                <li><strong>Otros:</strong> Deno, React Native, Electron, etc.</li>
+            </ul>
+        </div>
+
+        <div class="blog-card">
+            <h2>5. Conceptos Avanzados y Ecosistema</h2>
+            <ul>
+                <li><strong>Módulos (ES Modules):</strong> (ES6+) Para organizar y reutilizar código con <code>import</code> y <code>export</code>.</li>
+                <li><strong>JSON (JavaScript Object Notation):</strong> Formato ligero de intercambio de datos.</li>
+                <li><strong>AJAX:</strong> Concepto de solicitudes asíncronas al servidor sin recargar la página.</li>
+                <li><strong>Web APIs:</strong> APIs proporcionadas por los navegadores (DOM, Fetch API, etc.).</li>
+                <li><strong>NPM (Node Package Manager):</strong> Gestor de paquetes para JS.</li>
+                <li><strong>Frameworks y Librerías:</strong>
+                    <ul>
+                        <li><strong>Front-end:</strong> React, Angular, Vue.js</li>
+                        <li><strong>Back-end:</strong> Express.js (para Node.js)</li>
+                    </ul>
+                </li>
+                <li><strong>TypeScript:</strong> Un "superset" de JavaScript que añade tipado estático opcional.</li>
+            </ul>
+        </div>
+
+        <div class="note">
+            <p><strong>Nota:</strong> Para ver el código JavaScript en acción en tu navegador, puedes abrir las "Herramientas de Desarrollador" (generalmente F12 o Ctrl+Shift+I), ir a la pestaña "Consola" y pegar y ejecutar los ejemplos de código ahí. Algunos ejemplos (como los de Node.js) requieren un entorno específico para ser ejecutados.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Teoría de JavaScript. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
