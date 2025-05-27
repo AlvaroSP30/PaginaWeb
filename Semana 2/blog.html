@@ -3,86 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>¿Qué es Emmet? - Blog</title>
-  <link rel="stylesheet" href="estilo.blog.css">
+  <title>Blog - Códigos Emmet</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <header class="header">
-    <div class="container">
-      <h1>Blog de Desarrollo Web</h1>
-      <nav>
-        <a href="../index.html">Inicio</a>
-        <a href="#contenido">Artículo</a>
-      </nav>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+
+  <header class="bg-white shadow p-6">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold text-blue-600">Códigos Emmet</h1>
+      <p class="text-lg text-gray-600">Herramientas para escribir HTML y CSS más rápido</p>
     </div>
   </header>
 
-  <main id="contenido" class="container">
-    <article class="blog-post">
-      <h2>¿Qué es Emmet?</h2>
-      <p><strong>Emmet</strong> es una herramienta que permite escribir código HTML y CSS de manera más rápida mediante <em>abreviaciones</em> que se expanden automáticamente en fragmentos completos de código.</p>
+  <main class="max-w-4xl mx-auto px-6 py-10">
+    <article class="bg-white p-8 rounded shadow">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">¿Qué es Emmet?</h2>
+      <p class="mb-4">
+        Emmet es una herramienta que permite escribir código HTML y CSS de manera más rápida mediante abreviaciones que se expanden automáticamente. Está integrada en la mayoría de los editores modernos como VS Code.
+      </p>
 
-      <h3>¿Cómo funciona?</h3>
-      <p>Funciona interpretando expresiones cortas con una sintaxis especial, y luego las expande presionando <code>Tab</code>.</p>
+      <h3 class="text-xl font-semibold mt-6 mb-2">Beneficios de usar Emmet</h3>
+      <ul class="list-disc list-inside mb-4">
+        <li>Ahorra tiempo en la escritura de código.</li>
+        <li>Reduce errores de tipeo.</li>
+        <li>Permite construir estructuras HTML complejas con menos esfuerzo.</li>
+        <li>Mejora la productividad del desarrollador frontend.</li>
+      </ul>
 
-      <pre><code>div.container&gt;ul&gt;li*3</code></pre>
-      <p>Resultado:</p>
-      <pre><code>&lt;div class="container"&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
+      <h3 class="text-xl font-semibold mt-6 mb-2">Ejemplos de uso</h3>
+      <div class="bg-gray-100 p-4 rounded mb-4">
+        <p><strong>1. Elementos HTML simples:</strong></p>
+        <code class="block bg-white p-2 my-2 rounded">&gt; div</code>
+        <p>Resultado: <code>&lt;div&gt;&lt;/div&gt;</code></p>
+      </div>
 
-      <h3>Símbolos principales</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Símbolo</th>
-            <th>Significado</th>
-            <th>Ejemplo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>&gt;</code></td>
-            <td>Hijo</td>
-            <td><code>div&gt;p</code></td>
-          </tr>
-          <tr>
-            <td><code>+</code></td>
-            <td>Hermano</td>
-            <td><code>h1+p</code></td>
-          </tr>
-          <tr>
-            <td><code>*</code></td>
-            <td>Multiplicación</td>
-            <td><code>li*5</code></td>
-          </tr>
-          <tr>
-            <td><code>#</code></td>
-            <td>ID</td>
-            <td><code>div#main</code></td>
-          </tr>
-          <tr>
-            <td><code>.</code></td>
-            <td>Clase</td>
-            <td><code>div.box</code></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="bg-gray-100 p-4 rounded mb-4">
+        <p><strong>2. Elementos con clase e ID:</strong></p>
+        <code class="block bg-white p-2 my-2 rounded">div#header</code>
+        <p>Resultado: <code>&lt;div id="header"&gt;&lt;/div&gt;</code></p>
+        <code class="block bg-white p-2 my-2 rounded">div.container</code>
+        <p>Resultado: <code>&lt;div class="container"&gt;&lt;/div&gt;</code></p>
+      </div>
 
-      <h3>Conclusión</h3>
-      <p>Emmet es una herramienta poderosa que te ahorra tiempo y mejora la productividad al escribir código HTML/CSS. Ideal para desarrolladores frontend.</p>
+      <div class="bg-gray-100 p-4 rounded mb-4">
+        <p><strong>3. Jerarquía de elementos:</strong></p>
+        <code class="block bg-white p-2 my-2 rounded">ul>li*3</code>
+        <p>Resultado:</p>
+        <pre class="bg-white p-2 rounded text-sm overflow-auto">
+&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        </pre>
+      </div>
+
+      <div class="bg-blue-100 p-4 rounded mt-8">
+        <h3 class="text-lg font-semibold text-blue-700 mb-2">Conclusión</h3>
+        <p>Emmet es una herramienta imprescindible para todo desarrollador frontend. Dominar sus abreviaciones permite escribir estructuras HTML y CSS con rapidez y precisión.</p>
+      </div>
     </article>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 Alvaro Pinares | Blog Técnico</p>
-    </div>
+  <footer class="bg-white shadow mt-10 p-6 text-center text-sm text-gray-500">
+    © 2025 Alvaro Pinares Taype
   </footer>
+
 </body>
 </html>
