@@ -1,0 +1,90 @@
+/* style.css */
+
+/* Fuente general */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Encabezado */
+.header {
+  background-color: #0d6efd;
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(248, 248, 248, 0.1);
+}
+
+.header h1 {
+  margin-bottom: 0.5rem;
+}
+
+/* Contenido principal */
+.content {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+article {
+  margin-bottom: 3rem;
+}
+
+article h2 {
+  color: #0d6efd;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+code {
+  background-color: #eee;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+/* Pie de página */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #e9ecef;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+main {
+  background-color: #f9fafb; /* Fondo muy claro */
+  font-family: 'Inter', sans-serif;
+  color: #374151; /* gris oscuro para texto */
+}
+
+article {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  color: #111827; /* casi negro para títulos */
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #4b5563; /* gris medio para párrafos */
+  line-height: 1.6;
+}
