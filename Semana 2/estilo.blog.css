@@ -1,0 +1,83 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header, .footer {
+  background-color: #0f172a;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.header nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #60a5fa;
+}
+
+.header nav a:hover {
+  text-decoration: underline;
+}
+
+.blog-post {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+
+.blog-post h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #1e40af;
+}
+
+.blog-post h3 {
+  margin-top: 20px;
+  color: #2563eb;
+}
+
+.blog-post pre {
+  background: #f1f5f9;
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 10px 0;
+}
+
+.blog-post table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.blog-post th, .blog-post td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.blog-post th {
+  background-color: #e2e8f0;
+}
+
+.footer {
+  margin-top: 40px;
+}

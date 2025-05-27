@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¿Qué es Emmet? - Blog</title>
+  <link rel="stylesheet" href="estilo.blog.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Blog de Desarrollo Web</h1>
+      <nav>
+        <a href="../index.html">Inicio</a>
+        <a href="#contenido">Artículo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="container">
+    <article class="blog-post">
+      <h2>¿Qué es Emmet?</h2>
+      <p><strong>Emmet</strong> es una herramienta que permite escribir código HTML y CSS de manera más rápida mediante <em>abreviaciones</em> que se expanden automáticamente en fragmentos completos de código.</p>
+
+      <h3>¿Cómo funciona?</h3>
+      <p>Funciona interpretando expresiones cortas con una sintaxis especial, y luego las expande presionando <code>Tab</code>.</p>
+
+      <pre><code>div.container&gt;ul&gt;li*3</code></pre>
+      <p>Resultado:</p>
+      <pre><code>&lt;div class="container"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+
+      <h3>Símbolos principales</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Símbolo</th>
+            <th>Significado</th>
+            <th>Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>&gt;</code></td>
+            <td>Hijo</td>
+            <td><code>div&gt;p</code></td>
+          </tr>
+          <tr>
+            <td><code>+</code></td>
+            <td>Hermano</td>
+            <td><code>h1+p</code></td>
+          </tr>
+          <tr>
+            <td><code>*</code></td>
+            <td>Multiplicación</td>
+            <td><code>li*5</code></td>
+          </tr>
+          <tr>
+            <td><code>#</code></td>
+            <td>ID</td>
+            <td><code>div#main</code></td>
+          </tr>
+          <tr>
+            <td><code>.</code></td>
+            <td>Clase</td>
+            <td><code>div.box</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Conclusión</h3>
+      <p>Emmet es una herramienta poderosa que te ahorra tiempo y mejora la productividad al escribir código HTML/CSS. Ideal para desarrolladores frontend.</p>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Alvaro Pinares | Blog Técnico</p>
+    </div>
+  </footer>
+</body>
+</html>
