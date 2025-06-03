@@ -32,170 +32,34 @@
             </ul>
         </div>
 
-        <div class="blog-card">
-            <h2>2. Autenticación basada en tokens</h2>
+    <div class="blog-card">
+    <h2>2. Autenticación basada en tokens</h2>
+    <ul>
+        <li><strong>Concepto:</strong> Un método de verificación de identidad que permite a los usuarios acceder a sistemas sin necesidad de proporcionar credenciales constantemente. Se basa en la emisión de un "token" (datos cifrados) que valida la identidad del usuario por un período determinado.</li>
+        <li><strong>Fundamentos Claves:</strong>
             <ul>
-                <li><strong>Declarativo:</strong> Describes cómo quieres que se vea tu UI y React se encarga de las actualizaciones del DOM.</li>
-                <li><strong>Basado en Componentes:</strong> La aplicación se construye a partir de pequeños, aislados y reutilizables bloques de código.</li>
-                <li><strong>Aprende una vez, escribe en cualquier lugar:</strong> React Native permite escribir aplicaciones móviles nativas.</li>
-                <li><strong>Virtual DOM:</strong> React utiliza una representación ligera en memoria del DOM real. Solo aplica los cambios mínimos y necesarios al DOM, optimizando el rendimiento.</li>
-                <li><strong>Gran Comunidad:</strong> Acceso a abundante documentación, tutoriales y soporte.</li>
+                <li><strong>Generación de tokens:</strong> Se crea un token único al iniciar sesión.</li>
+                <li><strong>Uso de tokens:</strong> El usuario incluye el token en las peticiones al servidor en lugar de credenciales.</li>
+                <li><strong>Validación de tokens:</strong> El servidor verifica la validez y vigencia del token.</li>
+                <li><strong>Expiración y Renovación:</strong> Los tokens tienen duración limitada y requieren renovación.</li>
+                <li><strong>Seguridad:</strong> Los tokens están cifrados y firmados digitalmente para prevenir manipulación.</li>
             </ul>
-        </div>
+        </li>
+    </ul>
+    <ul>
+        <li><strong>Tipos de token:</strong>
+        <ul>
+            <li><strong>JSON Web Token (JWT): </strong> mpliamente utilizado en aplicaciones web y móviles.</li>
+            <li><strong>OAuth Tokens: </strong> Usados en autenticación delegada para acceder a APIs.</li>
+            <li><strong>SAML Tokens: </strong> Comunes en entornos empresariales.</li>
+        </ul>
+    </ul>
 
-        <div class="blog-card">
-            <h2>3. Conceptos Fundamentales</h2>
-
-            <h3>a. Componentes</h3>
-            <p>Son los bloques de construcción de cualquier aplicación React. Encapsulan lógica, estado y la interfaz de usuario.</p>
-            <ul>
-                <li><strong>Componentes de Clase (menos comunes hoy en día):</strong>
-                    <pre><code>import React from 'react';
-
-class Saludo extends React.Component {
-    render() {
-        return &lt;h1&gt;Hola, {this.props.nombre}!&lt;/h1&gt;;
-    }
-}
-// Uso: &lt;Saludo nombre="Mundo" /&gt;</code></pre>
-                </li>
-                <li><strong>Componentes Funcionales (preferidos con Hooks):</strong>
-                    <pre><code>import React from 'react';
-
-function SaludoFuncional(props) {
-    return &lt;h1&gt;Hola, {props.nombre}!&lt;/h1&gt;;
-}
-// Uso: &lt;SaludoFuncional nombre="Amigo" /&gt;</code></pre>
-                </li>
-            </ul>
-
-            <h3>b. JSX (JavaScript XML)</h3>
-            <p>Una extensión de la sintaxis de JavaScript para describir la UI. Permite escribir HTML-like en JS.</p>
-            <ul>
-                <li><strong>Con JSX (lo que escribes):</strong>
-                    <pre><code>&lt;h1&gt;Hola Mundo&lt;/h1&gt;</code></pre>
-                </li>
-                <li><strong>Incorporando lógica JS con llaves {}:</strong>
-                    <pre><code>const nombre = "React";
-const elemento = &lt;h1&gt;Hola, {nombre}!&lt;/h1&gt;;</code></pre>
-                </li>
-                <li><strong>Reglas clave:</strong> Un solo elemento raíz, atributos en <code>camelCase</code> (ej. <code>className</code>), eventos en <code>camelCase</code> (ej. <code>onClick</code>).</li>
-            </ul>
-
-            <h3>c. Props (Propiedades)</h3>
-            <p>Argumentos que se pasan a los componentes desde su componente padre. Son de <strong>solo lectura</strong> (inmutables).</p>
-            <pre><code>function Boton({ texto, onClick }) { // Destructuring de props
-    return &lt;button onClick={onClick}&gt;{texto}&lt;/button&gt;;
-}
-
-// Uso
-&lt;Boton texto="Click Aquí" onClick={() => alert('¡Botón clickeado!')} /&gt;</code></pre>
-
-            <h3>d. Estado (State)</h3>
-            <p>Datos internos de un componente que pueden cambiar con el tiempo. Cuando el estado cambia, React re-renderiza el componente.</p>
-            <pre><code>import React, { useState } from 'react';
-
-function Contador() {
-    const [cuenta, setCuenta] = useState(0); // [estado actual, función para actualizar estado]
-
-    const incrementar = () => {
-        setCuenta(cuenta + 1);
-    };
-
-    return (
-        &lt;div&gt;
-            &lt;p&gt;La cuenta es: {cuenta}&lt;/p&gt;
-            &lt;button onClick={incrementar}&gt;Incrementar&lt;/button&gt;
-        &lt;/div&gt;
-    );
-}</code></pre>
-            <p><strong>Importante:</strong> Siempre usa la función de actualización (ej. <code>setCuenta</code>) para modificar el estado.</p>
-
-            <h3>e. Ciclo de Vida de los Componentes</h3>
-            <p>Las diferentes fases por las que pasa un componente. En componentes funcionales, los **Hooks** (especialmente <code>useEffect</code>) manejan estas fases.</p>
-
-            <h3>f. Hooks (para componentes funcionales)</h3>
-            <p>Funciones que permiten "engancharse" al estado y características del ciclo de vida desde componentes funcionales.</p>
-            <ul>
-                <li><strong><code>useState</code>:</strong> Para añadir estado.</li>
-                <li><strong><code>useEffect</code>:</strong> Para efectos secundarios (llamadas a API, suscripciones, etc.).
-                    <pre><code>import React, { useState, useEffect } from 'react';
-
-function FetchData() {
-    const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/todos/1')
-            .then(response => response.json())
-            .then(json => {
-                setData(json);
-                setLoading(false);
-            });
-        return () => { console.log("Limpieza del efecto"); };
-    }, []); // Array de dependencias vacío: se ejecuta solo una vez al montar
-
-    if (loading) return &lt;p&gt;Cargando datos...&lt;/p&gt;;
-    return &lt;p&gt;Datos: {data.title}&lt;/p&gt;;
-}</code></pre>
-                </li>
-                <li><strong>Otros Hooks comunes:</strong> <code>useContext</code>, <code>useReducer</code>, <code>useRef</code>, <code>useCallback</code>, <code>useMemo</code>.</li>
-            </ul>
-
-            <h3>g. Renderizado Condicional</h3>
-            <p>Permite renderizar diferentes elementos o componentes basados en una condición.</p>
-            <pre><code>function MensajeLogin(props) {
-    const estaLogueado = props.estaLogueado;
-    if (estaLogueado) {
-        return &lt;p&gt;Bienvenido de nuevo!&lt;/p&gt;;
-    }
-    return &lt;p&gt;Por favor, inicia sesión.&lt;/p&gt;;
-}</code></pre>
-
-            <h3>h. Listas y Keys</h3>
-            <p>Al renderizar una lista, React requiere una prop <code>key</code> única para cada elemento, lo que ayuda a optimizar el rendimiento.</p>
-            <pre><code>function ListaElementos(props) {
-    const items = props.items;
-    return (
-        &lt;ul&gt;
-            {items.map(item =>
-                &lt;li key={item.id}&gt;
-                    {item.nombre}
-                &lt;/li&gt;
-            )}
-        &lt;/ul&gt;
-    );
-}</code></pre>
-        </div> <div class="blog-card">
-            <h2>4. Flujo de Datos Unidireccional (One-Way Data Flow)</h2>
-            <p>Los datos fluyen en una sola dirección: de los componentes padres a los hijos a través de las <code>props</code>. Esto hace que el flujo sea predecible y la depuración más sencilla.</p>
-        </div>
-
-        <div class="blog-card">
-            <h2>5. Conceptos Avanzados y Ecosistema</h2>
-            <ul>
-                <li><strong>Context API:</strong> Para compartir datos globales en un árbol de componentes sin pasar props manualmente.</li>
-                <li><strong>Redux / Zustand / Jotai:</strong> Librerías para la gestión de estado más complejas.</li>
-                <li><strong>React Router:</strong> Librería estándar para gestionar el enrutamiento en SPAs.</li>
-                <li><strong>Next.js / Gatsby:</strong> Frameworks que extienden React con SSR, SSG y optimizaciones.</li>
-                <li><strong>Testing:</strong> Jest y React Testing Library son herramientas comunes.</li>
-                <li><strong>Herramientas de Desarrollo:</strong> La extensión "React Developer Tools" para navegadores.</li>
-            </ul>
-        </div>
-
-        <div class="blog-card">
-            <h2>6. ¿Cómo empezar con React?</h2>
-            <p>La forma más común es usar <code>Vite</code> o <code>Create React App</code>:</p>
-            <ul>
-                <li>Con Vite: <code>npm create vite@latest my-react-app -- --template react</code></li>
-                <li>Con Create React App: <code>npx create-react-app my-react-app</code></li>
-            </ul>
-            <p>Estos comandos configuran un proyecto de React con una estructura básica y herramientas de desarrollo como Babel y Webpack.</p>
-        </div>
     </div>
-
-    <footer class="footer">
-        <p>&copy; 2025 Teoría de React. Todos los derechos reservados.</p>
-    </footer>
+        <div class="blog-card">
+            <h2>3. Descompresión de Archivos Zips</h2>
+            <ul>
+                <li><strong>Componentes de Clase (menos comunes hoy en día):</strong> Se incluye una instrucción práctica sobre cómo descomprimir archivos zip, un paso común en la gestión de recursos o dependencias en proyectos de desarrollo.</li>
+                <p> Este resumen puede ser una excelente adición a tu portafolio, mostrando tu comprensión de los principios fundamentales del desarrollo backend. </p>
 </body>
 </html>
