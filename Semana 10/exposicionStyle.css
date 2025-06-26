@@ -1,170 +1,157 @@
-/* Importación de fuentes (ya la tenías, la mantenemos) */
+/* Importación de fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 
-/* Variables CSS para colores (opcional pero buena práctica para consistencia) */
+/* Variables CSS (si ya las tienes en tu styles.css, omite esta parte) */
 :root {
-    --primary-blue: #3b82f6; /* Tu azul principal */
-    --light-gray: #f8fafc; /* Fondo claro para secciones */
-    --dark-gray: #1e293b; /* Texto oscuro principal */
-    --medium-gray: #475569; /* Texto secundario */
+    --primary-blue: #3b82f6;
+    --secondary-blue: #2563eb;
+    --text-dark: #1e293b;
+    --text-medium: #475569;
+    --bg-light: #f1f5f9;
+    --bg-lighter: #f8fafc;
+    --white: #ffffff;
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* Estilos generales del body */
+/* Estilos generales (asegúrate de que coincidan con los de tu styles.css principal) */
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    color: var(--dark-gray);
-    background-color: var(--light-gray);
+    color: var(--text-dark);
+    background-color: var(--bg-light);
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased; /* Mejorar la renderización de la fuente */
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
     width: 100%;
-    max-width: 1200px; /* Ancho máximo para el contenido */
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem; /* Padding lateral */
+    padding: 0 1.5rem; /* Ajuste a 1.5rem para mayor consistencia con Tailwind */
 }
 
-/* Header de la página (similar al hero-section de tu portfolio) */
-.hero-header {
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); /* Degradado azul */
-    padding-top: 6rem; /* Más espacio arriba */
-    padding-bottom: 6rem; /* Más espacio abajo */
-    color: white;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+/* Barra de navegación (mantener tu estilo existente) */
+.navbar {
+    background-color: var(--white);
+    box-shadow: var(--shadow-sm);
+    position: fixed; /* O sticky, si lo prefieres */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-.hero-header h1 {
-    font-size: 3.5rem; /* Ajuste para pantallas grandes */
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    font-weight: 800; /* Extra bold para el título principal */
+.nav-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem; /* Ajuste de padding */
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
-.hero-header p {
-    font-size: 1.5rem;
-    max-width: 800px; /* Ancho limitado para legibilidad */
-    margin: 0 auto;
-    opacity: 0.95;
+.nav-link:hover {
+    background-color: #e2e8f0;
+    color: var(--primary-blue);
 }
 
-/* Estilos para las tarjetas de blog */
-.blog-card {
-    /* Tailwind CSS ya maneja mucho de esto:
-       bg-white, p-8, rounded-xl, shadow-lg, hover:shadow-xl,
-       transition-all, duration-300, transform, hover:-translate-y-1, mb-12 */
-    border: 1px solid #e2e8f0; /* Borde sutil para cada tarjeta */
-    line-height: 1.7; /* Mejorar la legibilidad del texto */
-}
-
-.blog-card h2 {
-    color: var(--dark-gray);
-    font-size: 2.25rem; /* Mayor tamaño para los títulos de sección */
-    font-weight: 700;
-    margin-bottom: 1.5rem;
+/* Estilo para el título de sección (reutilizado) */
+.section-title {
     position: relative;
-    padding-bottom: 0.5rem;
+    display: inline-block;
 }
 
-.blog-card h2::after {
+.section-title::after {
     content: '';
     position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 60px; /* Un subrayado debajo del h2 */
-    height: 3px;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px; /* Un poco más ancho para este título */
+    height: 4px; /* Un poco más grueso */
     background-color: var(--primary-blue);
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
-.blog-card h3 {
-    color: var(--primary-blue); /* Azul para subtítulos de tarjetas */
-    font-size: 1.75rem; /* Tamaño para subtítulos */
-    font-weight: 600;
-    margin-bottom: 0.75rem;
+/* Estilos específicos para la sección de Tokens */
+.tokens-section {
+    padding-top: 5rem; /* Espacio para el navbar fijo */
+    padding-bottom: 5rem;
+    background-color: var(--bg-lighter); /* Fondo similar al de otras secciones claras */
 }
 
-.blog-card p {
-    color: var(--medium-gray);
-    font-size: 1.125rem; /* Texto de párrafo más grande para legibilidad */
-    margin-bottom: 1rem;
+.token-card {
+    /* Tailwind ya aplica gran parte de esto:
+       bg-white, p-8, rounded-xl, shadow-lg, hover:shadow-xl,
+       transition-all, duration-300, transform, hover:-translate-y-1 */
+    border: 1px solid #e2e8f0; /* Borde sutil para definir cada tarjeta */
 }
 
-.blog-card strong {
-    font-weight: 700; /* Hacer que el texto en negrita destaque */
-    color: var(--dark-gray);
+.token-card .text-blue-600 { /* Color de los iconos */
+    color: var(--primary-blue);
 }
 
-.blog-card ul {
-    list-style: disc; /* Puntos de lista */
-    padding-left: 1.5rem; /* Sangría para las listas */
+.token-card h3 { /* Título de la tarjeta */
+    color: var(--text-dark);
+}
+
+.token-card p { /* Párrafo principal de la tarjeta */
+    color: var(--text-medium);
+}
+
+.token-card strong {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.token-card ul {
     margin-top: 1rem;
+    padding-left: 1.5rem; /* Espaciado para la lista */
 }
 
-.blog-card ul li {
-    margin-bottom: 0.75rem; /* Espacio entre ítems de lista */
-    color: var(--medium-gray);
-    font-size: 1.125rem;
-    line-height: 1.5;
-}
-
-/* Estilo para listas anidadas (Fundamentos Clave, Tipos de token) */
-.blog-card ul ul {
-    list-style: circle; /* Un círculo para las listas anidadas */
-    padding-left: 1.5rem;
-    margin-top: 0.5rem;
-}
-
-.blog-card ul ul li {
-    font-size: 1rem; /* Un poco más pequeño para listas anidadas */
+.token-card ul li {
     margin-bottom: 0.5rem;
+    color: var(--text-medium);
 }
 
-/* Pie de página (adaptado de tu footer existente) */
-footer {
-    background-color: #1e293b;
-    color: #f1f5f9;
+/* Footer (reutilizado de tu CSS) */
+.footer {
+    background-color: var(--dark-gray);
+    color: var(--bg-light);
     font-size: 0.9rem;
-    padding: 2rem 0;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .hero-header {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
+    .tokens-section .grid {
+        grid-template-columns: 1fr; /* Apila las tarjetas en una sola columna */
     }
-    .hero-header h1 {
+
+    .section-title {
         font-size: 2.5rem;
+        margin-bottom: 3rem;
     }
-    .hero-header p {
-        font-size: 1.125rem;
-    }
-    .blog-card {
+
+    .token-card {
         padding: 1.5rem; /* Menos padding en móviles */
     }
-    .blog-card h2 {
-        font-size: 1.75rem;
-        margin-bottom: 1rem;
+
+    .token-card h3 {
+        font-size: 1.5rem;
     }
-    .blog-card h3 {
-        font-size: 1.375rem;
-    }
-    .blog-card p,
-    .blog-card ul li {
+
+    .token-card p, .token-card ul li {
         font-size: 1rem;
     }
 }
 
+/* Ajuste para tabletas (si lo consideras necesario) */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .hero-header h1 {
-        font-size: 4rem;
-    }
-    .hero-header p {
-        font-size: 1.25rem;
+    .tokens-section .grid {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tabletas */
     }
 }
