@@ -1,0 +1,170 @@
+/* Importación de fuentes (ya la tenías, la mantenemos) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+/* Variables CSS para colores (opcional pero buena práctica para consistencia) */
+:root {
+    --primary-blue: #3b82f6; /* Tu azul principal */
+    --light-gray: #f8fafc; /* Fondo claro para secciones */
+    --dark-gray: #1e293b; /* Texto oscuro principal */
+    --medium-gray: #475569; /* Texto secundario */
+}
+
+/* Estilos generales del body */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    background-color: var(--light-gray);
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased; /* Mejorar la renderización de la fuente */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo para el contenido */
+    margin: 0 auto;
+    padding: 0 1.5rem; /* Padding lateral */
+}
+
+/* Header de la página (similar al hero-section de tu portfolio) */
+.hero-header {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); /* Degradado azul */
+    padding-top: 6rem; /* Más espacio arriba */
+    padding-bottom: 6rem; /* Más espacio abajo */
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.hero-header h1 {
+    font-size: 3.5rem; /* Ajuste para pantallas grandes */
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-weight: 800; /* Extra bold para el título principal */
+}
+
+.hero-header p {
+    font-size: 1.5rem;
+    max-width: 800px; /* Ancho limitado para legibilidad */
+    margin: 0 auto;
+    opacity: 0.95;
+}
+
+/* Estilos para las tarjetas de blog */
+.blog-card {
+    /* Tailwind CSS ya maneja mucho de esto:
+       bg-white, p-8, rounded-xl, shadow-lg, hover:shadow-xl,
+       transition-all, duration-300, transform, hover:-translate-y-1, mb-12 */
+    border: 1px solid #e2e8f0; /* Borde sutil para cada tarjeta */
+    line-height: 1.7; /* Mejorar la legibilidad del texto */
+}
+
+.blog-card h2 {
+    color: var(--dark-gray);
+    font-size: 2.25rem; /* Mayor tamaño para los títulos de sección */
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.blog-card h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px; /* Un subrayado debajo del h2 */
+    height: 3px;
+    background-color: var(--primary-blue);
+    border-radius: 2px;
+}
+
+.blog-card h3 {
+    color: var(--primary-blue); /* Azul para subtítulos de tarjetas */
+    font-size: 1.75rem; /* Tamaño para subtítulos */
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.blog-card p {
+    color: var(--medium-gray);
+    font-size: 1.125rem; /* Texto de párrafo más grande para legibilidad */
+    margin-bottom: 1rem;
+}
+
+.blog-card strong {
+    font-weight: 700; /* Hacer que el texto en negrita destaque */
+    color: var(--dark-gray);
+}
+
+.blog-card ul {
+    list-style: disc; /* Puntos de lista */
+    padding-left: 1.5rem; /* Sangría para las listas */
+    margin-top: 1rem;
+}
+
+.blog-card ul li {
+    margin-bottom: 0.75rem; /* Espacio entre ítems de lista */
+    color: var(--medium-gray);
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+/* Estilo para listas anidadas (Fundamentos Clave, Tipos de token) */
+.blog-card ul ul {
+    list-style: circle; /* Un círculo para las listas anidadas */
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.blog-card ul ul li {
+    font-size: 1rem; /* Un poco más pequeño para listas anidadas */
+    margin-bottom: 0.5rem;
+}
+
+/* Pie de página (adaptado de tu footer existente) */
+footer {
+    background-color: #1e293b;
+    color: #f1f5f9;
+    font-size: 0.9rem;
+    padding: 2rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-header {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    .hero-header h1 {
+        font-size: 2.5rem;
+    }
+    .hero-header p {
+        font-size: 1.125rem;
+    }
+    .blog-card {
+        padding: 1.5rem; /* Menos padding en móviles */
+    }
+    .blog-card h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+    .blog-card h3 {
+        font-size: 1.375rem;
+    }
+    .blog-card p,
+    .blog-card ul li {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-header h1 {
+        font-size: 4rem;
+    }
+    .hero-header p {
+        font-size: 1.25rem;
+    }
+}

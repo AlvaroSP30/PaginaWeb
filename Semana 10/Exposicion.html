@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceptos de Tokens en Desarrollo Web</title>
+    <link rel="stylesheet" href="exposicionStyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+
+    <section id="tokens" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-4xl md:text-5xl font-extrabold text-center mb-16 text-gray-900">
+                Tokens: Conceptos y Teoría
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+                <div class="token-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
+                    <div class="text-blue-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-lock"></i> </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">JSON Web Tokens (JWT)</h3>
+                    <p class="text-lg mb-4 text-gray-700 leading-relaxed flex-grow">
+                        Son **credenciales compactas y seguras** que verifican la identidad de un usuario tras la autenticación. Permiten la transmisión de información de forma autocontenida y verificable digitalmente.
+                    </p>
+                    <ul class="list-disc list-inside text-base text-gray-600 space-y-2 mt-auto">
+                        <li>**Header:** Tipo de token y algoritmo de cifrado.</li>
+                        <li>**Payload:** Información (claims) sobre el usuario o la sesión.</li>
+                        <li>**Signature:** Firma digital para garantizar integridad y autenticidad.</li>
+                    </ul>
+                </div>
+
+                <div class="token-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
+                    <div class="text-blue-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-key"></i> </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Tokens de Acceso (OAuth 2.0)</h3>
+                    <p class="text-lg mb-4 text-gray-700 leading-relaxed flex-grow">
+                        Representan la **autorización concedida** por un usuario a una aplicación para acceder a sus recursos protegidos en un servidor, sin compartir sus credenciales.
+                    </p>
+                    <ul class="list-disc list-inside text-base text-gray-600 space-y-2 mt-auto">
+                        <li>Son centrales en el **marco de autorización OAuth 2.0**.</li>
+                        <li>Generalmente tienen una **vida útil limitada** por seguridad.</li>
+                        <li>Pueden ir con "Refresh Tokens" para obtener nuevos accesos.</li>
+                    </ul>
+                </div>
+
+                <div class="token-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
+                    <div class="text-blue-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-palette"></i> </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Tokens de Diseño</h3>
+                    <p class="text-lg mb-4 text-gray-700 leading-relaxed flex-grow">
+                        Son **variables que representan valores de diseño** (colores, tipografías, espaciados) de un sistema de diseño, permitiendo una gran **consistencia y escalabilidad** visual.
+                    </p>
+                    <ul class="list-disc list-inside text-base text-gray-600 space-y-2 mt-auto">
+                        <li>Centralizan y estandarizan decisiones de diseño.</li>
+                        <li>Facilitan **cambios globales de estilo** con facilidad.</li>
+                        <li>Mejoran la colaboración entre equipos de diseño y desarrollo.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    </body>
+</html>
