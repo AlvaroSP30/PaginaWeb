@@ -195,3 +195,19 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+/* Styles for centering images in the project gallery */
+#project-gallery .bg-white.rounded-lg.shadow-lg.overflow-hidden {
+    display: flex;
+    flex-direction: column; /* Organiza la imagen y el texto en columna */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    height: 100%; /* Asegura que el contenedor flex tome la altura completa de su celda de la cuadrícula */
+}
+
+#project-gallery .bg-white.rounded-lg.shadow-lg.overflow-hidden img {
+    /* Anula 'object-cover' de Tailwind para asegurar que la imagen completa sea visible y se ajuste */
+    object-fit: contain;
+    /* Las propiedades flex en el padre centrarán la imagen dentro del espacio asignado */
+    width: 100%; /* Mantiene el comportamiento de ancho completo */
+    height: 16rem; /* Mantiene la altura equivalente a 'h-64' */
+}
