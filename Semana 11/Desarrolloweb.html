@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desarrollo Web Backend: Java, Spring y Jakarta</title>
-    <link rel="stylesheet" href="desarrollostyle.css">
+    <link rel="stylesheet" href="desarrollostyle.css"> 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,13 +17,12 @@
         <div class="container mx-auto px-6 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-blue-600">Alvaro Pinares Taype</a>
             <ul class="flex space-x-6">
-                <li><a href="#home" class="hover:text-blue-600">Hogar</a></li>
-                <li><a href="#backend-concepts" class="hover:text-blue-600">Backend</a></li>
-                <li><a href="#contact" class="hover:text-blue-600">Contacto</a></li>
+                <li><a href="#backend-concepts" class="hover:text-blue-600">Conceptos</a></li>
+                <li><a href="#project-gallery" class="hover:text-blue-600">Galería</a></li>
             </ul>
         </div>
     </nav>
-
+   
     <header class="hero-header py-24 text-white text-center">
         <div class="container mx-auto px-6">
             <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Desarrollo Web Backend</h1>
@@ -231,6 +230,50 @@
                 </div>
 
             </div>
+        </div>
+    </section>
+
+    <!--Galeria de proyectos-->
+    <section id="project-gallery" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-4xl md:text-5xl font-extrabold text-center mb-16 text-gray-900">
+                Galería del Proyecto
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="./assets/api-design.jpg" alt="Vista general del proyecto backend" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Diseño de la API REST</h3>
+                        <p class="text-gray-700 text-base">Representación visual de los endpoints de la API y su estructura.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="./assets/pom.xml" alt="Configuración de dependencias Maven" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Configuración `pom.xml`</h3>
+                        <p class="text-gray-700 text-base">Captura de pantalla del archivo `pom.xml` con las dependencias del proyecto.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="./assets/spring-boot-1.png" alt="Flujo de datos en la aplicación" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Flujo de Inyección de Dependencia</h3>
+                        <p class="text-gray-700 text-base">Diagrama o código que muestra cómo Spring gestiona las dependencias.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="./assets/jsp.png" alt="Ejemplo de JSP en acción" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Vista JSP con Datos Dinámicos</h3>
+                        <p class="text-gray-700 text-base">Muestra una página JSP renderizada con información proveniente del backend.</p>
+                    </div>
+                </div>
+
+                </div>
         </div>
     </section>
 
