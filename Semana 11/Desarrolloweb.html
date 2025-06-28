@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Web Backend: Java, Spring y Jakarta</title>
+    <link rel="stylesheet" href="desarrollostyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="font-inter antialiased text-gray-800 bg-gray-50">
+
+    <nav class="bg-white shadow-md py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-600">Alvaro Pinares Taype</a>
+            <ul class="flex space-x-6">
+                <li><a href="#home" class="hover:text-blue-600">Hogar</a></li>
+                <li><a href="#backend-concepts" class="hover:text-blue-600">Backend</a></li>
+                <li><a href="#contact" class="hover:text-blue-600">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero-header py-24 text-white text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Desarrollo Web Backend</h1>
+            <p class="text-xl md:text-2xl opacity-90">Fundamentos con Java, Spring y Jakarta: Arquitectura y Herramientas Esenciales</p>
+        </div>
+    </header>
+
+    <section id="backend-concepts" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title text-4xl md:text-5xl font-extrabold text-center mb-16 text-gray-900">
+                Conceptos Clave
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+                <div class="concept-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Apache Tomcat</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Contenedor de servlets desarrollado bajo el proyecto Jakarta, implementa especificaciones de servlets y JSP, funcionando como un servidor web para aplicaciones Java.
+                    </p>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Estructura de Directorios:</h4>
+                    <ul class="list-disc list-inside text-base text-gray-600 space-y-1">
+                        <li>`bin`: Ejecutables y scripts.</li>
+                        <li>`conf`: Archivos de configuración.</li>
+                        <li>`webapps`: Aplicaciones web.</li>
+                        <li>Y más...</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Configuración server.xml</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Núcleo de la configuración de Apache Tomcat, define la estructura y parámetros clave del servidor y sus componentes.
+                    </p>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Elementos Clave:</h4>
+                    <ul class="list-disc list-inside text-base text-gray-600 space-y-1">
+                        <li>`Server`, `Service`, `Connector`</li>
+                        <li>`Engine`, `Host`, `Context`</li>
+                        <li>Parámetros: `port`, `maxThreads`, etc.</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Gestión de Dependencias (Maven)</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Maven automatiza la administración de librerías y módulos, estandarizando estructuras de proyectos Java y facilitando la construcción del software.
+                    </p>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Clave:</h4>
+                    <ul class="list-disc list-inside text-base text-gray-600 space-y-1">
+                        <li>`pom.xml`: Archivo de configuración del proyecto.</li>
+                        <li>Repositorio Maven: Centraliza las librerías.</li>
+                        <li>Ciclo de vida de construcción (compile, package, install).</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Jakarta Server Pages (JSP)</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Lenguaje de script del lado del servidor para crear contenido web dinámico e independiente de la plataforma, con acceso a las API de Java.
+                    </p>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Procesamiento:</h4>
+                    <ul class="list-disc list-inside text-base text-gray-600 space-y-1">
+                        <li>JSP se transforma en un servlet.</li>
+                        <li>El servlet se compila y ejecuta.</li>
+                        <li>Genera HTML para el cliente.</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Sintaxis JSP</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Elementos clave para insertar lógica Java y mostrar datos en las páginas JSP.
+                    </p>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Elementos:</h4>
+                    <ul class="list-disc list-inside text-base text-gray-600 space-y-1">
+                        <li><strong>Scriptlets (`<% ... %>`):</strong> Bloques de código Java.</li>
+                        <li><strong>Declaraciones (`<%! ... %>`):</strong> Variables/métodos de la clase servlet.</li>
+                        <li><strong>Expresiones (`<%= ... %>`):</strong> Imprimen valores directamente.</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Directivas y Acciones JSP</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Elementos para controlar el comportamiento y la inclusión de recursos en las páginas JSP.
+                    </p>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Tipos:</h4>
+                    <ul class="list-disc list-inside text-base text-gray-600 space-y-1">
+                        <li><strong>Directivas (`<%@ ... %>`):</strong> `page`, `include`, `taglib`.</li>
+                        <li><strong>Acciones (`<jsp:...>`):</strong> `jsp:include`, `jsp:useBean`, etc.</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Objetos Implícitos JSP</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Nueve variables predefinidas automáticamente disponibles en todas las páginas JSP para acceder a recursos y funcionalidades del servidor.
+                    </p>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Ejemplos:</h4>
+                    <ul class="list-disc list-inside text-base text-gray-600 space-y-1">
+                        <li>`request`, `response`, `out`</li>
+                        <li>`session`, `application`, `pageContext`</li>
+                        <li>`config`, `page`, `exception`</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">MVC en JSP</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Patrón arquitectónico que separa la aplicación en tres componentes interconectados para mejorar la modularidad y el mantenimiento.
+                    </p>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Componentes:</h4>
+                    <ul class="list-disc list-inside text-base text-gray-600 space-y-1">
+                        <li><strong>Modelo:</strong> Lógica de negocio y datos.</li>
+                        <li><strong>Vista:</strong> Presentación (JSP).</li>
+                        <li><strong>Controlador:</strong> Maneja las interacciones del usuario.</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Spring Framework</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Robusto framework Java para el desarrollo de aplicaciones empresariales, diseñado para estandarizar y agilizar la programación, con una gran comunidad.
+                    </p>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Conceptos Clave:</h4>
+                    <ul class="list-disc list-inside text-base text-gray-600 space-y-1">
+                        <li><strong>Bean:</strong> Componente manejado por Spring.</li>
+                        <li><strong>Inversión de Control (IoC):</strong> El framework controla el ciclo de vida de los objetos.</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Inyección de Dependencia (DI)</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Tipo de IoC donde las propiedades de un objeto son inyectadas a través de constructor, setter o campo, mejorando la modularidad.
+                    </p>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Tipos:</h4>
+                    <ul class="list-disc list-inside text-base text-gray-600 space-y-1">
+                        <li>Basada en Constructor.</li>
+                        <li>Basada en Setter.</li>
+                        <li>Basada en Campo (evitar fuera del contenedor).</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Spring Container</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Contenedor de Inversión de Control (IoC Container) que gestiona el ciclo de vida completo de los objetos (beans) de la aplicación.
+                    </p>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Función:</h4>
+                    <ul class="list-disc list-inside text-base text-gray-600 space-y-1">
+                        <li>Crea, relaciona, configura y destruye beans.</li>
+                        <li>Realiza la inyección de dependencia.</li>
+                        <li>Utiliza metadatos (ej., XML) para la configuración.</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-blue-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Spring Boot</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Herramienta que simplifica la creación de proyectos con Spring Framework, eliminando la complejidad de las configuraciones y dependencias.
+                    </p>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Características:</h4>
+                    <ul class="list-disc list-inside text-base text-gray-600 space-y-1">
+                        <li>Configuración automática.</li>
+                        <li>Servidor incorporado.</li>
+                        <li>Métricas y comprobación de "salud".</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer py-6 bg-gray-800 text-white text-center">
+        <div class="container mx-auto px-6">
+            <p>Copyright © Alvaro Pinares Taype 2025</p>
+        </div>
+    </footer>
+
+</body>
+</html>

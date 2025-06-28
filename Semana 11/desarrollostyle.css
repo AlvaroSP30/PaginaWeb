@@ -1,0 +1,197 @@
+/* Importación de fuentes (asegúrate de que sea la misma que usas globalmente) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+/* Variables CSS para colores (si no las tienes ya en styles.css) */
+:root {
+    --primary-blue: #3b82f6; /* Tu azul principal */
+    --light-gray-bg: #f8fafc; /* Fondo muy claro para secciones */
+    --medium-gray-bg: #f1f5f9; /* Fondo de sección ligeramente más oscuro */
+    --dark-text: #1e293b; /* Texto oscuro principal */
+    --medium-text: #475569; /* Texto secundario */
+}
+
+/* Estilos generales del body (asegúrate de que coincidan con tu styles.css) */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--light-gray-bg);
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo para el contenido */
+    margin: 0 auto;
+    padding: 0 1.5rem; /* Padding lateral */
+}
+
+/* Estilo para el header principal de la sección (similar al hero-header anterior) */
+.hero-header {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #2563eb 100%); /* Degradado azul */
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-header h1 {
+    font-size: 3.5rem; /* Ajuste para pantallas grandes */
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.hero-header p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.95;
+}
+
+/* Estilo para el título de sección (reutilizado de tu CSS) */
+.section-title {
+    position: relative;
+    display: inline-block;
+    color: var(--dark-text); /* Asegura que el color sea el correcto */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-blue);
+    border-radius: 3px;
+}
+
+/* Estilos para las tarjetas de conceptos */
+.concept-card {
+    /* Tailwind CSS ya maneja gran parte de esto:
+       bg-white, p-8, rounded-xl, shadow-lg, hover:shadow-xl,
+       transition-all, duration-300, transform, hover:-translate-y-1 */
+    border: 1px solid #e2e8f0; /* Borde suave para definir cada tarjeta */
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+}
+
+.concept-card .text-blue-600 { /* Íconos */
+    color: var(--primary-blue);
+}
+
+.concept-card h3 { /* Título de la tarjeta */
+    color: var(--dark-text);
+}
+
+.concept-card h4 { /* Subtítulos dentro de las tarjetas */
+    color: var(--dark-text);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.concept-card p { /* Párrafo de la tarjeta */
+    color: var(--medium-text);
+    font-size: 1.125rem;
+}
+
+.concept-card ul {
+    list-style: disc;
+    padding-left: 1.25rem; /* Espaciado para los puntos de la lista */
+    margin-top: 1rem; /* Espacio superior para las listas */
+}
+
+.concept-card ul li {
+    margin-bottom: 0.5rem;
+    color: var(--medium-text);
+    font-size: 1rem;
+}
+
+.concept-card ul li strong {
+    color: var(--dark-text);
+}
+
+/* Estilos para botones (asegúrate de que coincidan con tu btn-primary existente) */
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb; /* Un azul más oscuro al hacer hover */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+/* Pie de página (adaptado de tu footer existente) */
+footer {
+    background-color: #1e293b;
+    color: #f1f5f9;
+    font-size: 0.9rem;
+    padding: 2rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-header {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    .hero-header h1 {
+        font-size: 2.5rem;
+    }
+    .hero-header p {
+        font-size: 1.125rem;
+    }
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+    .concept-card {
+        padding: 1.5rem;
+    }
+    .concept-card h3 {
+        font-size: 1.75rem;
+    }
+    .concept-card p,
+    .concept-card ul li {
+        font-size: 1rem;
+    }
+    /* Ajuste para los botones en móviles */
+    .flex-col.sm:flex-row.justify-center.space-y-4.sm:space-y-0.sm:space-x-4 {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .flex-col.sm:flex-row.justify-center.space-y-4.sm:space-y-0.sm:space-x-4 > a {
+        width: 100%; /* Que los botones ocupen todo el ancho en móvil */
+        max-width: 300px; /* Un ancho máximo para no ser excesivamente anchos */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-header h1 {
+        font-size: 4rem;
+    }
+    .hero-header p {
+        font-size: 1.25rem;
+    }
+    /* Dos columnas en tabletas */
+    .grid-cols-1.md:grid-cols-2.lg:grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
