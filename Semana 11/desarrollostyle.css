@@ -3,7 +3,7 @@
 
 /* Variables CSS para colores (si no las tienes ya en styles.css) */
 :root {
-    --primary-blue: #3b82f6; /* Tu azul principal */
+    --primary-blue: #1F305E; /* Tu azul principal */
     --light-gray-bg: #f8fafc; /* Fondo muy claro para secciones */
     --medium-gray-bg: #f1f5f9; /* Fondo de sección ligeramente más oscuro */
     --dark-text: #1e293b; /* Texto oscuro principal */
@@ -32,7 +32,7 @@ body {
 
 /* Estilo para el header principal de la sección (similar al hero-header anterior) */
 .hero-header {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, #2563eb 100%); /* Degradado azul */
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #00416A 100%); /* Degradado azul */
     padding-top: 6rem;
     padding-bottom: 6rem;
     color: white;

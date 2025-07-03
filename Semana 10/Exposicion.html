@@ -4,125 +4,222 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tokens: Conceptos y Teoría</title>
-    <link rel="stylesheet" href="exposicionStyle.css"> <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos personalizados irán aquí */
+    </style>
 </head>
-<body class="font-sans antialiased text-gray-800 bg-gray-50">
+<body class="font-['Inter'] antialiased text-gray-800 bg-gray-50">
 
-    <nav class="bg-white shadow-md py-4">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-blue-600">Alvaro Pinares Taype</a>
-            <ul class="flex space-x-6">
-                <li><a href="#home" class="hover:text-blue-600">Hogar</a></li>
-                <li><a href="#tokens-section" class="hover:text-blue-600">Tokens</a></li>
-                <li><a href="#contact" class="hover:text-blue-600">Contacto</a></li>
+    <!-- Barra de navegación mejorada -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 backdrop-blur-md bg-white/90">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">Álvaro Pinares</a>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#home" class="nav-link font-medium text-gray-700 hover:text-blue-600 transition-colors">Inicio</a></li>
+                <li><a href="#tokens-section" class="nav-link font-medium text-gray-700 hover:text-blue-600 transition-colors">Tokens</a></li>
+                <li><a href="#contact" class="nav-link font-medium text-gray-700 hover:text-blue-600 transition-colors">Contacto</a></li>
+            </ul>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i class="fas fa-bars text-xl text-gray-700"></i>
+            </button>
+        </div>
+        
+        <!-- Menú móvil -->
+        <div class="mobile-menu hidden md:hidden bg-white w-full px-6 py-4 shadow-lg" id="mobile-menu">
+            <ul class="flex flex-col space-y-4">
+                <li><a href="#home" class="block py-2 text-gray-700 hover:text-blue-600 transition-colors">Inicio</a></li>
+                <li><a href="#tokens-section" class="block py-2 text-gray-700 hover:text-blue-600 transition-colors">Tokens</a></li>
+                <li><a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600 transition-colors">Contacto</a></li>
             </ul>
         </div>
     </nav>
 
-    <section id="tokens-section" class="py-20 bg-gray-100 min-h-screen flex items-center">
+    <!-- Sección principal mejorada -->
+    <section id="tokens-section" class="py-20 min-h-screen flex items-center">
         <div class="container mx-auto px-6">
-            <h2 class="section-title text-4xl md:text-5xl font-extrabold text-center mb-16 text-gray-900">
-                Tokens: Conceptos y Teoría
-            </h2>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 relative inline-block">
+                    Tokens: Conceptos y Teoría
+                    <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full"></span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Explorando los diferentes tipos de tokens y su aplicación en desarrollo moderno
+                </p>
+            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
-
-                <div class="token-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="text-blue-600 text-5xl mb-6 text-center">
-                        <i class="fas fa-lock"></i>
+            <!-- Grid de tarjetas mejorado -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+                <!-- Tarjeta JWT -->
+                <div class="token-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div class="icon-container w-20 h-20 rounded-2xl bg-blue-50 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-lock text-3xl text-blue-600"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Tokens de Autenticación (JWT)</h3>
-                    <p class="text-lg mb-6 text-gray-700 leading-relaxed">
+                    <p class="text-gray-600 mb-6 leading-relaxed">
                         Credenciales compactas y seguras que verifican la identidad del usuario tras la autenticación. Permiten la transmisión de información de forma autocontenida y verificable digitalmente.
                     </p>
-                    <ul class="list-disc list-inside text-base text-gray-600 space-y-2">
-                        <li>Header: Tipo de token y algoritmo de cifrado.</li>
-                        <li>Payload: Información (claims) sobre el usuario o la sesión.</li>
-                        <li>Signature: Firma digital para garantizar integridad y autenticidad.</li>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2 mt-1">•</span>
+                            <span class="text-gray-600">Header: Tipo de token y algoritmo de cifrado</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2 mt-1">•</span>
+                            <span class="text-gray-600">Payload: Información sobre el usuario o la sesión</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2 mt-1">•</span>
+                            <span class="text-gray-600">Signature: Firma digital para garantizar integridad</span>
+                        </li>
                     </ul>
                 </div>
 
-                <div class="token-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="text-blue-600 text-5xl mb-6 text-center">
-                        <i class="fas fa-key"></i>
+                <!-- Tarjeta OAuth -->
+                <div class="token-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div class="icon-container w-20 h-20 rounded-2xl bg-blue-50 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-key text-3xl text-blue-600"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Tokens de Acceso (OAuth 2.0)</h3>
-                    <p class="text-lg mb-6 text-gray-700 leading-relaxed">
+                    <p class="text-gray-600 mb-6 leading-relaxed">
                         Representan la autorización concedida por un usuario a una aplicación cliente para acceder a sus recursos protegidos en otro servicio, sin compartir las credenciales directas del usuario.
                     </p>
-                    <ul class="list-disc list-inside text-base text-gray-600 space-y-2">
-                        <li>Pieza clave en el flujo de autorización OAuth 2.0.</li>
-                        <li>Generalmente con vida útil limitada por seguridad.</li>
-                        <li>A menudo usados con "refresh tokens" para renovación.</li>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2 mt-1">•</span>
+                            <span class="text-gray-600">Pieza clave en el flujo de autorización OAuth 2.0</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2 mt-1">•</span>
+                            <span class="text-gray-600">Generalmente con vida útil limitada por seguridad</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2 mt-1">•</span>
+                            <span class="text-gray-600">Usados con "refresh tokens" para renovación</span>
+                        </li>
                     </ul>
                 </div>
 
-                <div class="token-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="text-blue-600 text-5xl mb-6 text-center">
-                        <i class="fas fa-palette"></i>
+                <!-- Tarjeta Design Tokens -->
+                <div class="token-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div class="icon-container w-20 h-20 rounded-2xl bg-blue-50 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-palette text-3xl text-blue-600"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Tokens de Diseño</h3>
-                    <p class="text-lg mb-6 text-gray-700 leading-relaxed">
+                    <p class="text-gray-600 mb-6 leading-relaxed">
                         Variables que representan los valores de diseño (colores, tipografías, espaciados) de un sistema de diseño. Ayudan a centralizar y gestionar los valores visuales de forma consistente.
                     </p>
-                    <ul class="list-disc list-inside text-base text-gray-600 space-y-2">
-                        <li>Aseguran consistencia en diseño y desarrollo.</li>
-                        <li>Permiten cambios globales de estilo rápidos y escalables.</li>
-                        <li>Mejoran la colaboración entre equipos.</li>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2 mt-1">•</span>
+                            <span class="text-gray-600">Aseguran consistencia en diseño y desarrollo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2 mt-1">•</span>
+                            <span class="text-gray-600">Permiten cambios globales de estilo rápidos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2 mt-1">•</span>
+                            <span class="text-gray-600">Mejoran la colaboración entre equipos</span>
+                        </li>
                     </ul>
                 </div>
-
             </div>
 
-            ---
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
-
-                <div class="token-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="text-green-600 text-5xl mb-6 text-center">
-                        <i class="fas fa-lightbulb"></i>
+            <!-- Sección de aprendizaje y código fuente -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Aprendizaje adquirido -->
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <div class="icon-container w-20 h-20 rounded-2xl bg-green-50 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-lightbulb text-3xl text-green-600"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Aprendizaje Adquirido</h3>
-                    <p class="text-lg mb-6 text-gray-700 leading-relaxed">
-                        Al estudiar los tokens, comprendí la importancia de la seguridad y la eficiencia en la gestión de sesiones de usuario y la autorización de acceso. La flexibilidad de los JWT para contener información y su capacidad de ser verificados sin consultar una base de datos los convierte en una herramienta potente.
-                    </p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Además, el concepto de Design Tokens me abrió los ojos a la importancia de la consistencia en el diseño, entendiendo cómo pequeñas variables pueden tener un impacto masivo en la escalabilidad y el mantenimiento de la interfaz de usuario.
-                    </p>
+                    <div class="space-y-4 text-gray-600 leading-relaxed">
+                        <p>
+                            Al estudiar los tokens, comprendí la importancia de la seguridad y la eficiencia en la gestión de sesiones de usuario y la autorización de acceso. La flexibilidad de los JWT para contener información y su capacidad de ser verificados sin consultar una base de datos los convierte en una herramienta potente.
+                        </p>
+                        <p>
+                            Además, el concepto de Design Tokens me abrió los ojos a la importancia de la consistencia en el diseño, entendiendo cómo pequeñas variables pueden tener un impacto masivo en la escalabilidad y el mantenimiento de la interfaz de usuario.
+                        </p>
+                    </div>
                 </div>
 
-                 <!-- Sección: Mi Código Fuente -->
-            <div class="bg-white p-8 rounded-xl shadow-lg max-w-4xl mx-auto text-center">
-                <h3 class="text-3xl font-bold text-gray-900 mb-6">Mi Código Fuente y Despliegue</h3>
-                <p class="text-lg text-gray-700 leading-relaxed mb-8">
-                    Puedes explorar el código fuente de esta página y el despliegue.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <!-- Botón de GitHub con icono y estilo btn-primary -->
-                    <a href="https://github.com/AlvaroSP30/token.git" target="_blank" class="btn-primary inline-flex items-center justify-center px-6 py-3">
-                        <i class="fab fa-github mr-2"></i> Ver Código Fuente
-                    </a>
-                    <!-- Nuevo Botón de Vercel con icono y estilo btn-primary -->
-                    <a href="https://token-rosy-theta.vercel.app/" target="_blank" class="btn-primary inline-flex items-center justify-center px-6 py-3 bg-green-500 hover:bg-green-600">
-                        <i class="fas fa-rocket mr-2"></i> Ver Despliegue en Vercel
-                    </a>
+                <!-- Código fuente -->
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 flex flex-col">
+                    <div class="icon-container w-20 h-20 rounded-2xl bg-purple-50 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-code text-3xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">Mi Código Fuente</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed flex-grow">
+                        Explora el código fuente de esta página y el despliegue en vivo para ver cómo se implementaron estos conceptos.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://github.com/AlvaroSP30/token.git" target="_blank" 
+                           class="btn-primary flex items-center justify-center px-6 py-3 rounded-lg gap-2">
+                            <i class="fab fa-github"></i> Código en GitHub
+                        </a>
+                        <a href="https://token-rosy-theta.vercel.app/" target="_blank" 
+                           class="btn-secondary flex items-center justify-center px-6 py-3 rounded-lg gap-2 bg-green-600 hover:bg-green-700">
+                            <i class="fas fa-rocket"></i> Ver en Vercel
+                        </a>
+                    </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- Pie de página (ejemplo, asume tu footer principal aquí) -->
-    <!-- Para un ejemplo autocontenido, se incluye un footer básico -->
-    <footer class="footer py-6 bg-gray-800 text-white text-center">
+    <!-- Pie de página mejorado -->
+    <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-6">
-            <p>Copyright © Alvaro Pinares Taype 2025</p>
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">Álvaro Pinares</a>
+                    <p class="text-gray-400 mt-1">Desarrollador Frontend</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400">© 2023 Todos los derechos reservados</p>
+                    <p class="text-gray-400 text-sm mt-1">Hecho con <i class="fas fa-heart text-red-400"></i> en Perú</p>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <!-- Botón para volver arriba -->
+    <a href="#tokens-section" id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-blue-700 transition-all duration-300 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Menú móvil
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Botón volver arriba
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('hidden');
+            } else {
+                backToTop.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
