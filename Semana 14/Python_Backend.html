@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Web Backend: Python y Flask</title>
+    <link rel="stylesheet" href="flask_style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+
+    <header class="bg-white shadow p-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold text-blue-600">Desarrollo Web Backend con Python y Flask</h1>
+            <p class="text-lg text-gray-600">Una introducción al poder del lado del servidor</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-10">
+        <article class="bg-white p-8 rounded shadow">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Teoría y Conceptos Clave 🐍</h2>
+            <p class="mb-4">
+                El desarrollo web **backend** se encarga de la **lógica del lado del servidor**, la gestión de bases de datos y la comunicación entre el navegador (frontend) y la información. Cuando usas Python y Flask, estás trabajando en este "detrás de escenas" de una aplicación web.
+            </p>
+
+            <h3 class="text-xl font-semibold mt-6 mb-2">a. ¿Qué es Flask?</h3>
+            <p class="mb-4">
+                <strong>Flask</strong> es un **microframework** de Python para el desarrollo web. Es "micro" porque no incluye herramientas o librerías por defecto para todo (como bases de datos o validación de formularios), lo que lo hace muy ligero y flexible. Tú decides qué componentes añadir, lo que lo convierte en una excelente opción para construir APIs RESTful, aplicaciones web pequeñas y medianas, o microservicios.
+            </p>
+
+            <h3 class="text-xl font-semibold mt-6 mb-2">b. Conceptos Fundamentales:</h3>
+            <ul class="list-disc list-inside mb-4">
+                <li>
+                    <strong>Rutas (Routes):</strong> Son las URL que tu aplicación "escucha". Cuando un usuario visita una URL específica (ej., <code>/</code> para la página de inicio, o <code>/usuarios</code>), Flask sabe qué función de Python debe ejecutar. Se definen con el decorador <code>@app.route()</code>.
+                    <pre class="bg-gray-100 p-2 my-2 rounded text-sm overflow-auto"><code>@app.route('/')
+def index():
+    return "¡Hola, mundo desde Flask!"</code></pre>
+                </li>
+                <li>
+                    <strong>Vistas (View Functions):</strong> Son las funciones de Python que se ejecutan cuando se accede a una ruta. Estas funciones procesan la solicitud y devuelven una respuesta, que suele ser HTML, JSON o una redirección.
+                </li>
+                <li>
+                    <strong>Plantillas (Templates):</strong> Aunque Flask es minimalista, permite usar **Jinja2** (un motor de plantillas) para generar HTML dinámico. Esto significa que puedes tener archivos HTML con "marcadores de posición" que Flask rellena con datos desde el backend antes de enviarlos al navegador.
+                    <p class="ml-4 mt-2"><strong><code>render_template()</code>:</strong> Función de Flask para renderizar plantillas Jinja2.</p>
+                </li>
+                <li>
+                    <strong>Solicitud (Request) y Respuesta (Response):</strong>
+                    <ul class="list-circle list-inside ml-4 mt-2">
+                        <li><strong>Request:</strong> Objeto que contiene toda la información de la solicitud HTTP enviada por el cliente (navegador), como datos de formulario, parámetros de URL, encabezados, etc. Puedes acceder a ellos a través del objeto <code>request</code> de Flask.</li>
+                        <li><strong>Response:</strong> Lo que tu aplicación Flask envía de vuelta al cliente. Puede ser HTML, JSON, imágenes, etc.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>WSGI (Web Server Gateway Interface):</strong> Es una especificación estándar para que los servidores web y las aplicaciones web Python se comuniquen. Flask es una aplicación WSGI. Para desplegar una aplicación Flask en producción, necesitas un servidor WSGI como Gunicorn o uWSGI.
+                </li>
+                <li>
+                    <strong>Entornos Virtuales (Virtual Environments):</strong> ¡Crucial para cualquier proyecto Python! Un entorno virtual aísla las dependencias de tu proyecto de las de otros proyectos y de la instalación global de Python en tu sistema. Esto evita conflictos de versiones y mantiene tus proyectos limpios y manejables.
+                </li>
+            </ul>
+        </article>
+
+        <article class="bg-white p-8 rounded shadow mt-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">2. Formas de Instalación mediante CMD (Línea de Comandos) 💻</h2>
+            <p class="mb-4">
+                Antes de instalar Flask, es fundamental que uses un **entorno virtual**.
+            </p>
+
+            <h3 class="text-xl font-semibold mt-6 mb-2">Paso 1: Instalar Python (Si no lo tienes)</h3>
+            <p class="mb-4">
+                Si aún no tienes Python, descárgalo e instálalo desde el sitio web oficial: <a href="https://www.python.org/downloads/" target="_blank" class="text-blue-600 hover:underline">python.org</a>. Asegúrate de marcar la opción "Add Python to PATH" durante la instalación.
+            </p>
+
+            <h3 class="text-xl font-semibold mt-6 mb-2">Paso 2: Crear y Activar un Entorno Virtual</h3>
+            <ol class="list-decimal list-inside mb-4 pl-4">
+                <li>
+                    <strong>Abre tu Símbolo del Sistema (CMD) o PowerShell.</strong>
+                </li>
+                <li>
+                    <strong>Navega a la carpeta donde quieres crear tu proyecto.</strong> Por ejemplo:
+                    <pre class="bg-gray-100 p-2 my-2 rounded text-sm overflow-auto"><code>cd C:\Users\TuUsuario\Documents\MisProyectosWeb
+mkdir mi_aplicacion_flask
+cd mi_aplicacion_flask</code></pre>
+                </li>
+                <li>
+                    <strong>Crea el entorno virtual:</strong>
+                    <pre class="bg-gray-100 p-2 my-2 rounded text-sm overflow-auto"><code>python -m venv venv</code></pre>
+                    <p class="ml-4 text-sm text-gray-600"><code>venv</code> es el nombre de la carpeta del entorno virtual.</p>
+                </li>
+                <li>
+                    <strong>Activa el entorno virtual:</strong>
+                    <ul class="list-disc list-inside ml-4 mt-2">
+                        <li><strong>En Windows (CMD):</strong>
+                            <pre class="bg-gray-100 p-2 my-2 rounded text-sm overflow-auto"><code>venv\Scripts\activate</code></pre>
+                        </li>
+                        <li><strong>En Windows (PowerShell):</strong>
+                            <pre class="bg-gray-100 p-2 my-2 rounded text-sm overflow-auto"><code>.\venv\Scripts\Activate.ps1</code></pre>
+                        </li>
+                    </ul>
+                    <p class="ml-4 text-sm text-gray-600">Verás <code>(venv)</code> al inicio de tu línea de comandos.</p>
+                </li>
+            </ol>
+
+            <h3 class="text-xl font-semibold mt-6 mb-2">Paso 3: Instalar Flask dentro del Entorno Virtual</h3>
+            <ol class="list-decimal list-inside mb-4 pl-4" start="1">
+                <li>
+                    <strong>Con el entorno virtual activado, instala Flask:</strong>
+                    <pre class="bg-gray-100 p-2 my-2 rounded text-sm overflow-auto"><code>pip install Flask</code></pre>
+                </li>
+            </ol>
+
+            <h3 class="text-xl font-semibold mt-6 mb-2">Paso 4: Crear tu Primera Aplicación Flask</h3>
+            <ol class="list-decimal list-inside mb-4 pl-4" start="1">
+                <li>
+                    <strong>Crea un archivo llamado <code>app.py</code></strong> en la misma carpeta del proyecto.
+                </li>
+                <li>
+                    <strong>Pega el siguiente código en <code>app.py</code>:</strong>
+                    <pre class="bg-gray-100 p-2 my-2 rounded text-sm overflow-auto"><code>from flask import Flask
+
+                    app = Flask(__name__)
+
+                    @app.route('/')
+                    def hello_world():
+                    return '¡Hola, mundo desde mi primera aplicación Flask!'
+
+                    @app.route('/about')
+                    def about():
+                    return 'Esta es una página de ejemplo sobre nosotros.'
+
+                    if __name__ == '__main__':
+                    app.run(debug=True)</code></pre>
+                </li>
+            </ol>
+
+            <h3 class="text-xl font-semibold mt-6 mb-2">Paso 5: Ejecutar la Aplicación Flask</h3>
+            <ol class="list-decimal list-inside mb-4 pl-4" start="1">
+                <li>
+                    <strong>Asegúrate de que tu entorno virtual esté activado.</strong>
+                </li>
+                <li>
+                    <strong>Ejecuta tu aplicación desde la línea de comandos:</strong>
+                    <pre class="bg-gray-100 p-2 my-2 rounded text-sm overflow-auto"><code>python app.py</code></pre>
+                </li>
+                <li>
+                    Verás una salida similar a:
+                    <pre class="bg-gray-100 p-2 my-2 rounded text-sm overflow-auto"><code> * Running on http://127.0.0.1:5000</code></pre>
+                </li>
+                <li>
+                    <strong>Abre tu navegador</strong> y visita <code>http://127.0.0.1:5000/</code> o <code>http://127.0.0.1:5000/about</code>.
+                </li>
+            </ol>
+            <p class="text-lg font-semibold mt-6 mb-2">Desactivar el Entorno Virtual</p>
+            <p class="mb-4">
+                Cuando termines de trabajar en tu proyecto Flask, puedes desactivar el entorno virtual escribiendo:
+                <pre class="bg-gray-100 p-2 my-2 rounded text-sm overflow-auto"><code>deactivate</code></pre>
+            </p>
+        </article>
+    </main>
+
+    <footer class="bg-white shadow mt-10 p-6 text-center text-sm text-gray-500">
+        © 2025 Alvaro Pinares Taype
+    </footer>
+
+    <div class="mt-8 mb-8 text-center">
+        <a href="../index.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Ir al Inicio</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+/* Estilos básicos para el cuerpo y los contenedores */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    max-width: 1024px; /* Un poco más amplio que max-w-4xl para el header */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* Estilo para las tarjetas de blog/contenido */
+.blog-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-bottom: 2rem; /* Espacio entre tarjetas si hay varias */
+}
+
+/* Estilos de encabezados */
+h1 {
+    font-size: 2.25rem; /* text-3xl de Tailwind */
+    font-weight: 700; /* font-bold de Tailwind */
+    color: #3b82f6; /* blue-600 de Tailwind */
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.875rem; /* text-2xl de Tailwind */
+    font-weight: 700; /* font-bold de Tailwind */
+    color: #1f2937; /* gray-900 de Tailwind */
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.25rem; /* text-xl de Tailwind */
+    font-weight: 600; /* font-semibold de Tailwind */
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos para párrafos y listas */
+p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+ol {
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos para bloques de código */
+pre {
+    background-color: #f3f4f6; /* gray-100 de Tailwind */
+    padding: 1rem;
+    border-radius: 0.25rem;
+    overflow-x: auto; /* Permite scroll horizontal para código largo */
+    font-family: monospace;
+    font-size: 0.875rem; /* text-sm de Tailwind */
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+code {
+    font-family: monospace;
+    background-color: #e5e7eb; /* gray-200 de Tailwind */
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+}
+
+/* Estilo para enlaces */
+a {
+    color: #3b82f6; /* blue-600 de Tailwind */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo específico para el botón "Ir al Inicio" */
+.inline-block {
+    display: inline-block;
+}
+.bg-blue-600 {
+    background-color: #3b82f6;
+}
+.text-white {
+    color: white;
+}
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+.rounded {
+    border-radius: 0.25rem;
+}
+.hover\:bg-blue-700:hover {
+    background-color: #2563eb;
+}
+.transition {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+.mt-8 {
+    margin-top: 2rem;
+}
+.mb-8 {
+    margin-bottom: 2rem;
+}
+.text-center {
+    text-align: center;
+}
