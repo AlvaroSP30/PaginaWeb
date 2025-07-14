@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Web Backend: PHP y Laravel</title>
+    <link rel="stylesheet" href="laravel_style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800 leading-relaxed font-poppins">
+
+    <header class="header-modern">
+        <div class="container mx-auto text-center py-8 px-6">
+            <h1 class="header-title">Desarrollo Web Backend con PHP y Laravel</h1>
+            <p class="header-subtitle">Una inmersión en el ecosistema PHP</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <article class="content-card fade-in-section">
+            <h2 class="section-title">1. Servidor Web: Apache HTTP Server 🌐</h2>
+            <p class="paragraph">
+                El <strong>Apache HTTP Server</strong>, o simplemente "Apache", es el servidor web de código abierto más popular y utilizado en el mundo. Su función principal es entregar contenido web a los usuarios.
+            </p>
+            <p class="paragraph">
+                Cuando un usuario escribe una URL en su navegador, envía una "solicitud" a un servidor. Apache es el software que reside en ese servidor y se encarga de:
+            </p>
+            <ul class="list-styled">
+                <li>Recibir request HTTP/HTTPS del navegador.</li>
+                <li>Buscar el contenido solicitado HTML (y imágenes, videos, archivos PDF, etc.) en el servidor.</li>
+                <li>Enviar response (ese contenido) de vuelta al navegador del usuario.</li>
+            </ul>
+
+            <h3 class="subsection-title">a. Apache Lounge</h3>
+            <p class="paragraph">
+                <strong>Apache Lounge</strong> es un sitio web y una comunidad que se especializa en proporcionar versiones compiladas (binarios) del Apache HTTP Server, principalmente para sistemas operativos Windows. Permite ejecutar Apache Lounge en Windows directamente desde la versión ZIP sin instalarlo como servicio.
+            </p>
+
+            <h3 class="subsection-title">b. Instalación del Servidor Portable</h3>
+            <ol class="list-ordered">
+                <li>
+                    <strong>Descarga:</strong> Visita <a href="https://www.apachelounge.com/download/" target="_blank" class="text-blue-600 hover:underline">apachelounge.com/download/</a> y descarga el ZIP adecuado (ej., `httpd-2.4.xx-win64-VS17.zip`).
+                </li>
+                <li>
+                    <strong>Extrae el ZIP:</strong> Descomprime el archivo descargado (por ejemplo, `httpd-2.4.xx-win64-VS17.zip`) en una carpeta como `D:\Server\Apache24`.
+                </li>
+                <li>
+                    <strong>Verifica dependencias:</strong> Asegúrate de tener instalado el paquete de Visual C++ Redistributable correspondiente (por ejemplo, VC15 o VC17). Si no, puedes descargarlo desde el sitio de Apache Lounge.
+                </li>
+                <li>
+                    <strong>Configura `httpd.conf`:</strong> Abre `D:\server\Apache24\conf\httpd.conf` y revisa que tengas las siguientes directivas:
+                    <div class="code-toggle-wrapper">
+                        <button class="toggle-code-button">Mostrar Código</button>
+                        <pre class="code-block"><code>Listen 8080
+ServerName localhost:8080
+Define SRVROOT "D:\server\Apache24"</code></pre>
+                    </div>
+                </li>
+                <li>
+                    <strong>Ejecutar el Servidor:</strong> Desde la línea de comandos, navega a `D:\server\Apache24\bin` y ejecuta:
+                    <div class="code-toggle-wrapper">
+                        <button class="toggle-code-button">Mostrar Código</button>
+                        <pre class="code-block"><code>httpd.exe</code></pre>
+                    </div>
+                </li>
+                <li>
+                    <strong>Visualizar:</strong> Abre tu navegador y visita `http://localhost:8080`. Deberías ver "It works!".
+                </li>
+            </ol>
+
+            <h3 class="subsection-title">c. Archivo de Configuración "httpd.conf"</h3>
+            <p class="paragraph">
+                El archivo "httpd.conf" es el corazón de la configuración de Apache HTTP Server. Contiene directivas que dictan cómo se comporta el servidor, desde qué puertos escucha hasta cómo maneja las solicitudes y qué contenido sirve. Algunas directivas principales son:
+            </p>
+            <ul class="list-styled">
+                <li>`ServerRoot "ruta"`: Define el directorio base donde está instalada la configuración y los módulos de Apache.</li>
+                <li>`Listen [IP:]puerto`: Indica a Apache en qué direcciones IP y puertos debe escuchar las solicitudes entrantes.</li>
+                <li>`ServerName FQDN[:puerto]`: Establece el nombre de host y puerto que el servidor usa para identificarse a sí mismo.</li>
+                <li>`DocumentRoot "ruta"`: Especifica el directorio principal desde donde Apache sirve los archivos web por defecto.</li>
+                <li>`DirectoryIndex nombre_archivo`: Define el archivo que Apache buscará y servirá por defecto cuando se solicita un directorio.</li>
+                <li>`ErrorLog "ruta"`: Define la ubicación del archivo donde Apache registra los errores del servidor.</li>
+                <li>`LogLevel nivel`: Controla el nivel de detalle de los mensajes registrados en el ErrorLog.</li>
+                <li>`LoadModule nombre_modulo`: Carga módulos adicionales para extender la funcionalidad de Apache.</li>
+            </ul>
+        </article>
+
+        <article class="content-card fade-in-section mt-8">
+            <h2 class="section-title">2. PHP - Hypertext Preprocessor 🐘</h2>
+            <p class="paragraph">
+                <strong>PHP (acrónimo recursivo de PHP: Hypertext Preprocessor)</strong> es un lenguaje de programación de código abierto del lado del servidor, diseñado específicamente para el desarrollo web. Es uno de los lenguajes más utilizados en el mundo para construir sitios y aplicaciones web dinámicas.
+            </p>
+
+            <h3 class="subsection-title">a. ¿Cómo Funciona PHP?</h3>
+            <p class="paragraph">
+                Cuando solicitas una página con código PHP, el servidor pasa ese código a un <strong>intérprete PHP</strong>. Este intérprete procesa las instrucciones, que pueden incluir interactuar con bases de datos, manejar datos de formularios o generar contenido dinámico. El resultado de este procesamiento es código HTML, CSS y JavaScript puro, que el servidor luego envía a tu navegador. Tu navegador solo recibe y muestra este HTML final, sin ver nunca el código PHP original, haciendo que las páginas web sean dinámicas e interactivas.
+                <figure class="my-6">
+                    <img src="assets/Captura de pantalla 2025-07-14 161604.png" alt="Diagrama de flujo de PHP" class="mx-auto rounded-lg shadow-lg">
+                    <figcaption class="text-center text-sm text-gray-500 mt-2">Diagrama de flujo del procesamiento de PHP.</figcaption>
+                </figure>
+            </p>
+
+            <h3 class="subsection-title">b. Instalación de PHP</h3>
+            <ol class="list-ordered">
+                <li>
+                    <strong>Descarga el ZIP oficial:</strong> Ve a <a href="https://windows.php.net/download/" target="_blank" class="text-blue-600 hover:underline">windows.php.net/download/</a> y elige la versión para tu arquitectura (x64 o x86). Asegúrate de descargar el archivo ZIP, no el instalador. Para Apache, se recomienda usar las versiones <strong>Thread Safe</strong>.
+                </li>
+                <li>
+                    <strong>Extrae el contenido:</strong> Descomprime el archivo ZIP en una carpeta como `D:\server\php`.
+                </li>
+                <li>
+                    <strong>Configura `php.ini`:</strong> Dentro de `D:\server\php`, copia `php.ini-development` y renómbralo como `php.ini`. Abre el archivo `php.ini` con un editor de texto y habilita extensiones necesarias quitando el `;` al inicio de las líneas, por ejemplo:
+                    <div class="code-toggle-wrapper">
+                        <button class="toggle-code-button">Mostrar Código</button>
+                        <pre class="code-block"><code>extension_dir = "ext"
+extension=mysqli
+extension=curl</code></pre>
+                    </div>
+                </li>
+                <li>
+                    <strong>Agrega PHP al PATH:</strong> Ve a Configuración del sistema > Variables de entorno. En "Path", agrega la ruta `D:\server\php`. Reinicia la consola para que los cambios surtan efecto.
+                </li>
+                <li>
+                    <strong>Verifica la instalación:</strong> Abre una nueva consola (CMD) y escribe:
+                    <div class="code-toggle-wrapper">
+                        <button class="toggle-code-button">Mostrar Código</button>
+                        <pre class="code-block"><code>php -v</code></pre>
+                    </div>
+                </li>
+            </ol>
+
+            <h3 class="subsection-title">c. Sintaxis Básica de PHP</h3>
+            <ul class="list-styled">
+                <li>
+                    <strong>Estructura básica:</strong> Todo código PHP debe ir entre etiquetas especiales `<?php` y `?>`.
+                    <div class="code-toggle-wrapper">
+                        <button class="toggle-code-button">Mostrar Código</button>
+                        <pre class="code-block"><code>// Tu código PHP aquí
+echo "Hola, mundo!"; // Ejemplo
+</code></pre>
+                    </div>
+                </li>
+                <li>
+                    <strong>Comentarios:</strong> Puedes comentar tu código usando `//` o `#` para una línea, y `/* ... */` para varias líneas.
+                </li>
+                <li>
+                    <strong>Variables:</strong> Se declaran con el signo `$` (ej., `$nombre = "Ana";`). Las variables sí distinguen entre mayúsculas y minúsculas.
+                    <div class="code-toggle-wrapper">
+                        <button class="toggle-code-button">Mostrar Código</button>
+                        <pre class="code-block"><code>?php
+$nombre = "Ana";
+$edad = 25;
+?>
+</code></pre>
+                    </div>
+                </li>
+                <li>
+                    <strong>Salida de datos:</strong> `echo` y `print` se utilizan para mostrar información en pantalla. `echo` es un poco más rápido.
+                    <div class="code-toggle-wrapper">
+                        <button class="toggle-code-button">Mostrar Código</button>
+                        <pre class="code-block"><code>?php
+echo "¡Hola, mundo!";
+print "PHP es genial";
+?></code></pre>
+                    </div>
+                </li>
+                <li>
+                    <strong>Control de flujo condicional:</strong>
+                    <ul>
+                        <li>`if`, `else` y `elseif`: Permiten ejecutar bloques de código basados en condiciones.
+                            <div class="code-toggle-wrapper">
+                                <button class="toggle-code-button">Mostrar Código</button>
+                                <pre class="code-block"><code><?php
+$edad = 20;
+if ($edad >= 18) {
+    echo "Eres mayor de edad.";
+} elseif ($edad == 17) {
+    echo "Casi llegas.";
+} else {
+    echo "Eres menor de edad.";
+}
+?></code></pre>
+                            </div>
+                        </li>
+                        <li>`switch`: Útil cuando se evalúa una misma variable contra diferentes valores.
+                            <div class="code-toggle-wrapper">
+                                <button class="toggle-code-button">Mostrar Código</button>
+                                <pre class="code-block"><code>?php
+$color = "azul";
+switch ($color) {
+    case "rojo":
+        echo "El color es rojo.";
+        break;
+    case "azul":
+        echo "El color es azul.";
+        break;
+    default:
+        echo "Color no reconocido.";
+}
+?></code></pre>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Estructuras de repetición (bucles):</strong>
+                    <ul>
+                        <li>`for`: Ejecuta un bloque de código un número definido de veces.
+                            <div class="code-toggle-wrapper">
+                                <button class="toggle-code-button">Mostrar Código</button>
+                                <pre class="code-block"><code>?php
+for ($i=0; $i<5; $i++) {
+    echo "Número: " . $i . "<br>";
+}
+?></code></pre>
+                            </div>
+                        </li>
+                        <li>`while` y `do...while`: Se utilizan para repetir un bloque de código mientras se cumpla una condición. El `do...while` se ejecuta al menos una vez.
+                            <div class="code-toggle-wrapper">
+                                <button class="toggle-code-button">Mostrar Código</button>
+                                <pre class="code-block"><code>?php
+$x = 0;
+while ($x < 5) {
+    echo "Valor: " . $x . "<br>";
+    $x++;
+}
+
+$y = 0;
+do {
+    echo "Valor: " . $y . "<br>";
+    $y++;
+} while ($y < 5);
+?></code></pre>
+                            </div>
+                        </li>
+                        <li>`foreach`: Especialmente útil para recorrer arrays, ya que itera sobre cada elemento del array.
+                            <div class="code-toggle-wrapper">
+                                <button class="toggle-code-button">Mostrar Código</button>
+                                <pre class="code-block"><code>?php
+$frutas = ["Manzana", "Banana", "Cereza"];
+foreach ($frutas as $fruta) {
+    echo "Fruta: " . $fruta . "<br>";
+}
+?></code></pre>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Manejo de archivos e inclusión:</strong> `include`, `include_once`, `require` y `require_once` permiten incorporar archivos externos. `include` genera un `warning` si el archivo no se encuentra pero continúa la ejecución, mientras que `require` detiene la ejecución con un `fatal error`.
+                    <div class="code-toggle-wrapper">
+                        <button class="toggle-code-button">Mostrar Código</button>
+                        <pre class="code-block"><code>?php
+include 'funciones.php';
+require 'config.php';
+?></code></pre>
+                    </div>
+                </li>
+                <li>
+                    <strong>Funciones:</strong> Puedes encapsular bloques de código en funciones para reutilizarlas y organizar tu programa.
+                    <div class="code-toggle-wrapper">
+                        <button class="toggle-code-button">Mostrar Código</button>
+                        <pre class="code-block"><code>?php
+function saludar ($nombre) {
+    return "¡Hola, " . $nombre . "!";
+}
+echo saludar("Carlos");
+?></code></pre>
+                    </div>
+                </li>
+                <li>
+                    <strong>Finalización del script:</strong> `exit` o `die` detienen la ejecución del script.
+                    <div class="code-toggle-wrapper">
+                        <button class="toggle-code-button">Mostrar Código</button>
+                        <pre class="code-block"><code>?php
+if (!file_exists("importante.txt")) {
+    exit("El archivo importante no se encontró.");
+}
+?></code></pre>
+                    </div>
+                </li>
+            </ul>
+            <p class="paragraph">
+                Estas instrucciones y estructuras son la base para desarrollar en PHP, permitiéndote construir desde scripts simples hasta aplicaciones web complejas.
+            </p>
+        </article>
+
+        <article class="content-card fade-in-section mt-8">
+            <h2 class="section-title">3. Gestión de Dependencias con Composer 📦</h2>
+            <p class="paragraph">
+                <Strong>Composer</Strong> es la herramienta fundamental y el gestor de dependencias de facto para PHP. Funciona de manera similar a otras herramientas como npm (Node.js) o pip (Python). Composer no instala paquetes globalmente en tu sistema; en su lugar, instala las dependencias por cada proyecto en un directorio local (generalmente `vendor/`).
+            </p>
+
+            <h3 class="subsection-title">a. Descargar e Instalar Composer</h3>
+            <ol class="list-ordered">
+                <li>
+                    <strong>Descarga:</strong> Visita <a href="https://getcomposer.org/download/" target="_blank" class="text-blue-600 hover:underline">getcomposer.org/download/</a>.
+                </li>
+                <li>
+                    <strong>Requisitos previos:</strong> Asegúrate de tener PHP instalado y agregado al PATH del sistema. Puedes verificarlo abriendo la consola (CMD) y escribiendo:
+                    <div class="code-toggle-wrapper">
+                        <button class="toggle-code-button">Mostrar Código</button>
+                        <pre class="code-block"><code>php -v</code></pre>
+                    </div>
+                </li>
+                <li>
+                    <strong>Ejecuta el instalador:</strong> Abre el archivo `Composer-Setup.exe` descargado. Elige la ruta del ejecutable de PHP (por ejemplo, `D:\php\php.exe`), acepta las opciones por defecto y finaliza la instalación.
+                </li>
+                <li>
+                    <strong>Verifica la instalación:</strong> Abre una nueva consola y escribe:
+                    <div class="code-toggle-wrapper">
+                        <button class="toggle-code-button">Mostrar Código</button>
+                        <pre class="code-block"><code>composer -V</code></pre>
+                    </div>
+                </li>
+            </ol>
+        </article>
+
+        <article class="content-card fade-in-section mt-8">
+            <h2 class="section-title">4. Laravel Framework ✨</h2>
+            <p class="paragraph">
+                <strong>Laravel</strong> es un framework de PHP de código abierto que se centra en la simplicidad, la elegancia y el uso de patrones modernos de desarrollo. Se apoya en el patrón <strong>Modelo-Vista-Controlador (MVC)</strong> para organizar la lógica de la aplicación, lo que facilita el mantenimiento del código y la separación de responsabilidades. Laravel framework es muy extenso y su comunidad crece día a día.
+            </p>
+            <ul class="list-styled">
+                <li>Link: <a href="https://laravel.com/" target="_blank" class="text-blue-600 hover:underline">laravel.com</a></li>
+                <li>Documentación: <a href="https://laravel.com/docs/12.x" target="_blank" class="text-blue-600 hover:underline">laravel.com/docs/12.x</a></li>
+            </ul>
+
+            <h3 class="subsection-title">a. Terminología Laravel</h3>
+            <ul class="list-styled">
+                <li>
+                    <strong>Rutas (Routes):</strong> Son los puntos de entrada de la aplicación. Asignan una URL a una lógica específica (por ejemplo, a un controlador o a un `closure`) para responder a las solicitudes HTTP.
+                </li>
+                <li>
+                    <strong>Controladores (Controllers):</strong> Agrupan la lógica de negocio y gestionan las peticiones del usuario. Reciben la solicitud, interactúan con los modelos y retornan una respuesta.
+                </li>
+                <li>
+                    <strong>Vistas y Blade:</strong> Blade es el motor de plantillas de Laravel para separar la presentación del contenido y la lógica. Facilita la incorporación de código PHP en HTML mediante directivas específicas.
+                </li>
+                <li>
+                    <strong>Eloquent ORM:</strong> Es la herramienta que ofrece Laravel para interactuar con la base de datos. Mapea las tablas a clases `modelo` permitiendo trabajar con datos mediante una sintaxis intuitiva para operaciones CRUD.
+                </li>
+                <li>
+                    <strong>Middleware:</strong> Son filtros o capas intermedias que se sitúan entre la solicitud y la respuesta. Se utilizan para tareas como la autenticación, autorización o verificación de condiciones antes de acceder a ciertas rutas.
+                </li>
+                <li>
+                    <strong>Artisan:</strong> Es la interfaz de línea de comandos de Laravel. Con Artisan se automatizan tareas comunes como la generación de código, ejecución de pruebas y administración de la base de datos.
+                </li>
+                <li>
+                    <strong>Migrations y Seeds:</strong> Las <u>migraciones</u> permiten versionar y modificar la estructura de la base de datos de forma programática. Los seeds son scripts destinados a poblar la base de datos con datos iniciales o de prueba.
+                </li>
+                <li>
+                    <strong>Service Providers:</strong> Constituyen el mecanismo central de Laravel para registrar y configurar los servicios y componentes que forman la aplicación. A través de ellos se cargan aspectos fundamentales como la base de datos, el sistema de colas, etc.
+                </li>
+                <li>
+                    <strong>Facades:</strong> Ofrecen una interfaz estática para clases y servicios registrados en el contenedor de servicios de Laravel, simplificando la sintaxis.
+                </li>
+                <li>
+                    <strong>Composer:</strong> Es el gestor de dependencias con el que se instala y actualiza el framework, junto con sus paquetes y bibliotecas.
+                </li>
+            </ul>
+
+            <h3 class="subsection-title">b. Instalación de Laravel con Composer</h3>
+            <p class="paragraph">
+                <strong>Requisitos previos:</strong> PHP <u>(versión 8.1 o superior)</u>, Composer y Node.js y NPM (opcional, pero útil para compilar assets). Verifica que las extensiones `zip`, `fileinfo`, `pdo_sqlite` y `pgsql` estén habilitadas en tu `php.ini`.
+            </p>
+            <ol class="list-ordered">
+                <li>
+                    <strong>Instalar con Composer:</strong> Ejecuta el siguiente comando dentro de `htdocs/laravel` (si usas XAMPP/WAMP):
+                    <div class="code-toggle-wrapper">
+                        <button class="toggle-code-button">Mostrar Código</button>
+                        <pre class="code-block"><code>composer create-project laravel/laravel nombre-de-tu-proyecto</code></pre>
+                    </div>
+                </li>
+                <li>
+                    <strong>Accede al directorio:</strong>
+                    <div class="code-toggle-wrapper">
+                        <button class="toggle-code-button">Mostrar Código</button>
+                        <pre class="code-block"><code>cd nombre-de-tu-proyecto</code></pre>
+                    </div>
+                </li>
+                <li>
+                    <strong>Inicia el servidor de desarrollo:</strong>
+                    <div class="code-toggle-wrapper">
+                        <button class="toggle-code-button">Mostrar Código</button>
+                        <pre class="code-block"><code>php artisan serve</code></pre>
+                    </div>
+                </li>
+                <li>
+                    Luego abre tu navegador en `http://localhost:8000`.
+                </li>
+            </ol>
+        </article>
+
+        <article class="content-card fade-in-section mt-8">
+            <h2 class="section-title">5. Estructura de Directorios de Laravel 📁</h2>
+            <p class="paragraph">
+                La estructura de directorios en un proyecto Laravel está pensada para organizar el código de manera lógica, facilitando tanto el desarrollo como el mantenimiento de la aplicación.
+            </p>
+            <ul class="list-styled">
+                <li>
+                    <strong>Raíz del proyecto:</strong> Aquí se encuentran archivos fundamentales como `composer.json`, `artisan` (la herramienta de línea de comandos de Laravel) y otros archivos de configuración. Este directorio es el punto de partida del proyecto.
+                </li>
+                <li>
+                    <strong>`app`:</strong> Es el núcleo de la aplicación y contiene la lógica de negocio. Dentro de `app` se suelen encontrar subdirectorios como:
+                    <ul class="list-nested">
+                        <li>`Console`: Contiene los comandos personalizados de Artisan.</li>
+                        <li>`Http`: Aquí se alojan los controladores, middleware, y formularios (requests).</li>
+                        <li>`Providers`: Registra los proveedores de servicios de la aplicación.</li>
+                        <li>`Models` (opcional): Algunos proyectos prefieren una carpeta específica para ellos.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>`bootstrap`:</strong> Contiene el archivo `app.php`, encargado de iniciar el framework, y un directorio `cache` para almacenar archivos generados que ayudan a la optimización del rendimiento.
+                </li>
+                <li>
+                    <strong>`config`:</strong> Aquí se encuentran todos los archivos de configuración de la aplicación, abarcando desde la base de datos hasta la configuración de servicios externos y la gestión de la sesión.
+                </li>
+                <li>
+                    <strong>`database`:</strong> Aloja las migraciones (para versionar la base de datos), los factories (para generar datos de prueba) y los seeders (para poblar la base de datos con datos iniciales). También puede contener una base de datos SQLite.
+                </li>
+                <li>
+                    <strong>`public`:</strong> Es el punto de entrada para todas las solicitudes HTTP, ya que contiene el archivo `index.php`. Además, se alojan los activos públicos como imágenes, hojas de estilo (CSS) y archivos JavaScript.
+                </li>
+                <li>
+                    <strong>`resources`:</strong> Aquí se gestionan los elementos que serán compilados o transformados, como las vistas (Blade), archivos de lenguaje y recursos sin compilar como CSS o JavaScript.
+                </li>
+                <li>
+                    <strong>`routes`:</strong> En esta carpeta se definen todas las rutas de la aplicación. Por defecto, encontrarás archivos como:
+                    <ul class="list-nested">
+                        <li>`web.php`: Incluye las rutas que conforman la interfaz de la aplicación web.</li>
+                        <li>`api.php`: Contiene rutas orientadas a una API RESTful.</li>
+                        <li>`console.php`: Para comandos basados en la línea de comandos.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>`storage`:</strong> Este directorio se encarga de almacenar archivos generados por la aplicación, como logs, cachés, sesiones y archivos subidos. Se organiza en varias subcarpetas (`app`, `framework`, `logs`).
+                </li>
+                <li>
+                    <strong>`tests`:</strong> Contiene los tests unitarios y de funcionalidad que facilitan el aseguramiento de la calidad del código y la confiabilidad de la aplicación.
+                </li>
+                <li>
+                    <strong>`vendor`:</strong> Es administrado por Composer y agrupa todas las dependencias del proyecto, incluyendo los paquetes de terceros necesarios.
+                </li>
+            </ul>
+        </article>
+
+        <article class="content-card fade-in-section mt-8">
+            <h2 class="section-title">6. Ejemplo: Creación de Proyecto Laravel con Formulario (Estudiantes) 📝</h2>
+            <p class="paragraph">
+                Este es un ejemplo de cómo crear una aplicación web Laravel para registrar estudiantes.
+            </p>
+
+            <h3 class="subsection-title">Pasos del Proyecto:</h3>
+            <ol class="list-ordered">
+                <li>
+                    <strong>Crear el proyecto Laravel:</strong>
+                    <div class="code-toggle-wrapper">
+                        <button class="toggle-code-button">Mostrar Código</button>
+                        <pre class="code-block"><code>laravel</code></pre>
+                    </div>
+                </li>
+            </ol>
+        </article>
+    </main>
+    <footer class="footer bg-gray-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p class="text-sm">© 2025 Desarrollo Web Backend con PHP y Laravel. Todos los derechos reservados.</p>
+            <p class="text-xs">Creado por Alvaro Pinares Taype</p>
+        </div>
+        <script src="laravel_main.js"></script>
+</body>
+</html>

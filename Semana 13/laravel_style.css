@@ -1,6 +1,6 @@
 /* Base Styles */
 :root {
-    --color-primary: #00416A; /* Un azul vibrante */
+    --color-primary: #004573; /* Un rojo anaranjado para PHP/Laravel */
     --color-secondary: #50E3C2; /* Un verde azulado para contraste */
     --color-text-dark: #333333;
     --color-text-light: #555555;
@@ -13,22 +13,22 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif; /* Cambiado de 'Inter' a 'Poppins' */
+    font-family: 'Poppins', sans-serif; /* Cambiado a Poppins */
     color: var(--color-text-light);
     background-color: var(--color-bg-light);
-    line-height: 1.7;
+    line-height: 1.7; /* Mejorar legibilidad */
     margin: 0;
     padding: 0;
 }
 
 /* Typography */
-.font-inter { /* Esta clase podría renombrarse a .font-poppins si es necesario */
-    font-family: 'Poppins', sans-serif; /* Cambiado de 'Inter' a 'Poppins' */
+.font-poppins { /* Clase para Poppins */
+    font-family: 'Poppins', sans-serif;
 }
 
 .header-title {
-    font-family: 'Poppins', sans-serif; 
-    font-size: 2.8rem; /* Más grande y con estilo */
+    font-family: 'Poppins', serif; /* Mantiene Playfair Display para títulos grandes */
+    font-size: 2.8rem;
     font-weight: 700;
     color: var(--color-text-dark);
     margin-bottom: 0.5rem;
@@ -42,17 +42,17 @@ body {
 }
 
 .section-title {
-    font-family: 'Poppins', sans-serif; /* Podrías cambiarlo a Poppins o mantener Playfair Display */
+    font-family: 'Poppins', serif; /* Mantiene Playfair Display para títulos de sección */
     font-size: 2rem;
     font-weight: 700;
     color: var(--color-primary);
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--color-primary); /* Línea sutil */
+    border-bottom: 2px solid var(--color-primary);
 }
 
 .subsection-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Poppins para subtítulos */
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--color-text-dark);
@@ -75,7 +75,7 @@ body {
 }
 
 .main-content {
-    max-width: 900px; /* Un ancho más cómodo para lectura */
+    max-width: 900px;
     margin: 3rem auto;
     padding: 0 1.5rem;
 }
@@ -83,14 +83,14 @@ body {
 .content-card {
     background-color: var(--color-bg-card);
     padding: 2.5rem;
-    border-radius: 12px; /* Bordes más suaves */
+    border-radius: 12px;
     box-shadow: var(--shadow-medium);
     margin-bottom: 2.5rem;
-    transition: transform 0.2s ease-in-out; /* Pequeña animación al interactuar */
+    transition: transform 0.2s ease-in-out;
 }
 
 .content-card:hover {
-    transform: translateY(-5px); /* Efecto de "levantar" la tarjeta */
+    transform: translateY(-5px);
 }
 
 /* Lists */
@@ -112,7 +112,7 @@ body {
 }
 
 .list-nested {
-    list-style-type: circle; /* Otro tipo de viñeta para anidado */
+    list-style-type: circle;
     margin-left: 1.5rem;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
@@ -124,7 +124,7 @@ body {
     padding: 1.2rem;
     border-radius: 8px;
     overflow-x: auto;
-    font-family: 'Fira Code', 'JetBrains Mono', monospace; /* Fuentes modernas para código */
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
     font-size: 0.95rem;
     line-height: 1.5;
     margin-top: 1rem;
@@ -148,7 +148,7 @@ a {
 }
 
 a:hover {
-    color: #357ABD; /* Un poco más oscuro */
+    color: #C13515; /* Un poco más oscuro */
     text-decoration: underline;
 }
 
@@ -167,25 +167,25 @@ a:hover {
 .button-container {
     text-align: center;
     margin-top: 40px;
-    margin-bottom: 60px; /* Más espacio inferior */
+    margin-bottom: 60px;
 }
 
 .button-primary {
     display: inline-block;
     background-color: var(--color-primary);
     color: white;
-    padding: 14px 28px; /* Un poco más grande */
-    border-radius: 50px; /* Botón pill-shaped */
+    padding: 14px 28px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra para botón */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .button-primary:hover {
-    background-color: #357ABD; /* Color de hover más oscuro */
-    transform: translateY(-2px); /* Efecto de levantamiento */
+    background-color: #C13515;
+    transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -218,14 +218,13 @@ a:hover {
     font-weight: 600;
     transition: background-color 0.3s ease;
     margin-bottom: 0.5rem;
-    display: block; /* Para que ocupe su propia línea */
-    margin-top: 1rem; /* Espacio superior */
+    display: block;
+    margin-top: 1rem;
 }
 
 .toggle-code-button:hover {
     background-color: #44D7B6;
 }
-
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
