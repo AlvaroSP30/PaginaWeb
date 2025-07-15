@@ -23,12 +23,12 @@
         <article class="content-card fade-in-section">
             <h2 class="section-title">1. Teoría y Conceptos Clave 🐍</h2>
             <p class="paragraph">
-                El desarrollo web **backend** se encarga de la **lógica del lado del servidor**, la gestión de bases de datos y la comunicación entre el navegador (frontend) y la información. Cuando usas Python y Flask, estás trabajando en este "detrás de escenas" de una aplicación web.
+                El desarrollo web <strong>backend</strong> se encarga de la <strong>lógica del lado del servidor</strong>, la gestión de bases de datos y la comunicación entre el navegador (frontend) y la información. Cuando usas Python y Flask, estás trabajando en este "detrás de escenas" de una aplicación web.
             </p>
 
             <h3 class="subsection-title">a. ¿Qué es Flask?</h3>
             <p class="paragraph">
-                <strong>Flask</strong> es un **microframework** de Python para el desarrollo web. Es "micro" porque no incluye herramientas o librerías por defecto para todo (como bases de datos o validación de formularios), lo que lo hace muy ligero y flexible. Tú decides qué componentes añadir, lo que lo convierte en una excelente opción para construir APIs RESTful, aplicaciones web pequeñas y medianas, o microservicios.
+                <strong>Flask</strong> es un <u>microframework</u> de Python para el desarrollo web. Es "micro" porque no incluye herramientas o librerías por defecto para todo (como bases de datos o validación de formularios), lo que lo hace muy ligero y flexible. Tú decides qué componentes añadir, lo que lo convierte en una excelente opción para construir APIs RESTful, aplicaciones web pequeñas y medianas, o microservicios.
             </p>
 
             <h3 class="subsection-title">b. Conceptos Fundamentales:</h3>
@@ -37,7 +37,7 @@
                     <strong>Rutas (Routes):</strong> Son las URL que tu aplicación "escucha". Cuando un usuario visita una URL específica (ej., <code>/</code> para la página de inicio, o <code>/usuarios</code>), Flask sabe qué función de Python debe ejecutar. Se definen con el decorador <code>@app.route()</code>.
                     <div class="code-toggle-wrapper">
                         <button class="toggle-code-button">Mostrar Código</button>
-                        <pre class="code-block" style="display: none;"><code>@app.route('/')
+                        <pre class="code-block"><code>@app.route('/')
 def index():
     return "¡Hola, mundo desde Flask!"</code></pre>
                     </div>
@@ -46,8 +46,8 @@ def index():
                     <strong>Vistas (View Functions):</strong> Son las funciones de Python que se ejecutan cuando se accede a una ruta. Estas funciones procesan la solicitud y devuelven una respuesta, que suele ser HTML, JSON o una redirección.
                 </li>
                 <li>
-                    <strong>Plantillas (Templates):</strong> Aunque Flask es minimalista, permite usar **Jinja2** (un motor de plantillas) para generar HTML dinámico. Esto significa que puedes tener archivos HTML con "marcadores de posición" que Flask rellena con datos desde el backend antes de enviarlos al navegador.
-                    <p class="ml-8 mt-2 text-sm text-gray-600"><strong><code>render_template()</code>:</strong> Función de Flask para renderizar plantillas Jinja2.</p>
+                    <strong>Plantillas (Templates):</strong> Aunque Flask es minimalista, permite usar <strong>Jinja2</strong> (un motor de plantillas) para generar HTML dinámico. Esto significa que puedes tener archivos HTML con "marcadores de posición" que Flask rellena con datos desde el backend antes de enviarlos al navegador.
+                    <p class="ml-8 mt-2 text-sm"><strong><code>render_template()</code>:</strong> Función de Flask para renderizar plantillas Jinja2.</p>
                 </li>
                 <li>
                     <strong>Solicitud (Request) y Respuesta (Response):</strong>
@@ -68,7 +68,7 @@ def index():
         <article class="content-card fade-in-section mt-8">
             <h2 class="section-title">2. Formas de Instalación mediante CMD (Línea de Comandos) 💻</h2>
             <p class="paragraph">
-                Antes de instalar Flask, es fundamental que uses un **entorno virtual**.
+                Antes de instalar Flask, es fundamental que uses un <strong>entorno virtual</strong>.
             </p>
 
             <h3 class="subsection-title">Paso 1: Instalar Python (Si no lo tienes)</h3>
@@ -90,7 +90,7 @@ cd mi_aplicacion_flask</code></pre>
                 <li>
                     <strong>Crea el entorno virtual:</strong>
                     <pre class="code-block"><code>python -m venv venv</code></pre>
-                    <p class="ml-8 text-sm text-gray-600"><code>venv</code> es el nombre de la carpeta del entorno virtual.</p>
+                    <p class="ml-8 text-sm"><code>venv</code> es el nombre de la carpeta del entorno virtual.</p>
                 </li>
                 <li>
                     <strong>Activa el entorno virtual:</strong>
@@ -98,17 +98,17 @@ cd mi_aplicacion_flask</code></pre>
                         <li><strong>En Windows (CMD):</strong>
                             <div class="code-toggle-wrapper">
                                 <button class="toggle-code-button">Mostrar Código</button>
-                                <pre class="code-block" style="display: none;"><code>venv\Scripts\activate</code></pre>
+                                <pre class="code-block"><code>venv\Scripts\activate</code></pre>
                             </div>
                         </li>
                         <li><strong>En Windows (PowerShell):</strong>
                             <div class="code-toggle-wrapper">
                                 <button class="toggle-code-button">Mostrar Código</button>
-                                <pre class="code-block" style="display: none;"><code>.\venv\Scripts\Activate.ps1</code></pre>
+                                <pre class="code-block"><code>.\venv\Scripts\Activate.ps1</code></pre>
                             </div>
                         </li>
                     </ul>
-                    <p class="ml-8 text-sm text-gray-600">Verás <code>(venv)</code> al inicio de tu línea de comandos.</p>
+                    <p class="ml-8 text-sm">Verás <code>(venv)</code> al inicio de tu línea de comandos.</p>
                 </li>
             </ol>
 
@@ -118,7 +118,7 @@ cd mi_aplicacion_flask</code></pre>
                     <strong>Con el entorno virtual activado, instala Flask:</strong>
                     <div class="code-toggle-wrapper">
                         <button class="toggle-code-button">Mostrar Código</button>
-                        <pre class="code-block" style="display: none;"><code>pip install Flask</code></pre>
+                        <pre class="code-block"><code>pip install Flask</code></pre>
                     </div>
                 </li>
             </ol>
@@ -132,7 +132,7 @@ cd mi_aplicacion_flask</code></pre>
                     <strong>Pega el siguiente código en <code>app.py</code>:</strong>
                     <div class="code-toggle-wrapper">
                         <button class="toggle-code-button">Mostrar Código</button>
-                        <pre class="code-block" style="display: none;"><code>from flask import Flask
+                        <pre class="code-block"><code>from flask import Flask
 
 app = Flask(__name__)
 
@@ -159,14 +159,14 @@ if __name__ == '__main__':
                     <strong>Ejecuta tu aplicación desde la línea de comandos:</strong>
                     <div class="code-toggle-wrapper">
                         <button class="toggle-code-button">Mostrar Código</button>
-                        <pre class="code-block" style="display: none;"><code>python app.py</code></pre>
+                        <pre class="code-block"><code>python app.py</code></pre>
                     </div>
                 </li>
                 <li>
                     Verás una salida similar a:
                     <div class="code-toggle-wrapper">
                         <button class="toggle-code-button">Mostrar Código</button>
-                        <pre class="code-block" style="display: none;"><code> * Running on http://127.0.0.1:5000</code></pre>
+                        <pre class="code-block"><code> * Running on http://127.0.0.1:5000</code></pre>
                     </div>
                 </li>
                 <li>
@@ -178,7 +178,7 @@ if __name__ == '__main__':
                 Cuando termines de trabajar en tu proyecto Flask, puedes desactivar el entorno virtual escribiendo:
                 <div class="code-toggle-wrapper">
                     <button class="toggle-code-button">Mostrar Código</button>
-                    <pre class="code-block" style="display: none;"><code>deactivate</code></pre>
+                    <pre class="code-block"><code>deactivate</code></pre>
                 </div>
             </p>
         </article>
