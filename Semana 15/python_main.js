@@ -44,9 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Oculta el bloque de código por defecto y ajusta el texto del botón
             if (codeBlock.style.display !== 'block') {
                 codeBlock.style.display = 'none';
-                button.textContent = 'Mostrar'; // Texto inicial para todos los toggles
+                button.textContent = 'Mostrar Ejemplos'; // Texto inicial: "Mostrar Ejemplos"
             } else {
-                button.textContent = 'Ocultar'; // Si por alguna razón ya estaba visible
+                button.textContent = 'Ocultar Ejemplos'; // Si por alguna razón ya estaba visible
             }
         }
 
@@ -55,10 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentCodeBlock) {
                 if (currentCodeBlock.style.display === 'none' || currentCodeBlock.style.display === '') {
                     currentCodeBlock.style.display = 'block';
-                    button.textContent = 'Ocultar';
+                    button.textContent = 'Ocultar Ejemplos'; // Cambia a "Ocultar Ejemplos"
                 } else {
                     currentCodeBlock.style.display = 'none';
-                    button.textContent = 'Mostrar';
+                    button.textContent = 'Mostrar Ejemplos'; // Cambia a "Mostrar Ejemplos"
                 }
             }
         });
