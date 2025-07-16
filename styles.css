@@ -1,12 +1,12 @@
 /* Estilos base */
 :root {
-    --primary: #3b82f6;
-    --primary-dark: #2563eb;
-    --secondary: #f1f5f9;
-    --dark: #1e293b;
-    --light: #f8fafc;
-    --gray: #64748b;
-    --gray-light: #e2e8f0;
+    --primary: #3b82f6; /* Un azul primario */
+    --primary-dark: #2563eb; /* Un azul más oscuro para hover */
+    --secondary: #f1f5f9; /* Un gris claro secundario */
+    --dark: #1e293b; /* Texto oscuro */
+    --light: #f8fafc; /* Fondo claro */
+    --gray: #64748b; /* Gris para texto o bordes */
+    --gray-light: #e2e8f0; /* Gris muy claro */
 }
 
 /* Fuentes y estilos base */
@@ -36,6 +36,7 @@ section {
 .section-title {
     position: relative;
     display: inline-block;
+    font-family: 'Poppins', sans-serif; /* Asegurar Poppins para el título de sección */
 }
 
 .section-title::after {
@@ -63,6 +64,7 @@ section {
     justify-content: center;
     text-decoration: none;
     box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+    font-family: 'Poppins', sans-serif;
 }
 
 .btn-primary:hover {
@@ -82,6 +84,7 @@ section {
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    font-family: 'Poppins', sans-serif;
 }
 
 .btn-secondary:hover {
@@ -103,6 +106,7 @@ section {
 .nav-link {
     position: relative;
     padding: 8px 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 .nav-link::after {
@@ -125,9 +129,15 @@ section {
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
 
+/* Contenedor de categorías de habilidades */
+.skills-category-wrapper {
+    /* Aquí se define el grid para Frontend y Backend */
+}
+
 /* Tarjetas de habilidades */
 .skill-item {
     transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif; /* Asegurar Poppins para el texto de la habilidad */
 }
 
 .skill-item:hover {
@@ -156,6 +166,7 @@ section {
 .contact-form input,
 .contact-form textarea {
     transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
 }
 
 .contact-form input:focus,
@@ -164,7 +175,7 @@ section {
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
-/* Animaciones */
+/* Animaciones AOS (si usas la librería AOS) */
 [data-aos] {
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
@@ -226,6 +237,10 @@ section {
     
     .social-icons {
         justify-content: center;
+    }
+
+    .skills-category-wrapper {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
     }
 }
 
