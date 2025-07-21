@@ -15,6 +15,10 @@
     </header>
 
     <div class="container">
+        <div id="table-of-contents" style="background-color: #f0f8ff; border-left: 4px solid #3b82f6; padding: 15px; margin-bottom: 30px; border-radius: 5px;">
+            <h2 style="font-size: 1.5em; margin-bottom: 10px; color: #333;">Contenidos del Artículo</h2>
+            </div>
+
         <div class="blog-card">
             <h2>Introducción a CSS</h2>
             <p><strong>CSS (Cascading Style Sheets, o Hojas de Estilo en Cascada)</strong> es un lenguaje de hoja de estilos que se utiliza para describir la presentación de un documento escrito en un lenguaje de marcado, como HTML. CSS separa el contenido de la presentación visual de una página web, lo que permite a los diseñadores controlar la apariencia de múltiples páginas web desde un solo lugar.</p>
@@ -30,7 +34,7 @@
                 <li><strong>Selector:</strong> Apunta al elemento HTML que quieres estilizar (ej., <code>p</code>, <code>h1</code>, <code>.clase</code>, <code>#id</code>).</li>
                 <li><strong>Bloque de Declaraciones:</strong> Contiene una o más declaraciones, cada una con una <strong>propiedad</strong> y un <strong>valor</strong>, separadas por dos puntos (<code>:</code>), y terminando con un punto y coma (<code>;</code>).</li>
             </ul>
-            <pre><code>/* Selector h1 */
+            <pre><code class="copyable-code">/* Selector h1 */
 h1 {
     /* Propiedad: valor; */
     color: blue; /* Define el color del texto */
@@ -53,10 +57,10 @@ h1 {
             <p>Hay tres formas principales de integrar CSS en un documento HTML:</p>
             <ol>
                 <li><strong>En Línea (Inline Styles):</strong> Se aplica directamente a un elemento HTML usando el atributo <code>style</code>.
-                    <pre><code>&lt;p style="color: red; font-size: 16px;"&gt;Este texto es rojo.&lt;/p&gt;</code></pre>
+                    <pre><code class="copyable-code">&lt;p style="color: red; font-size: 16px;"&gt;Este texto es rojo.&lt;/p&gt;</code></pre>
                 </li>
                 <li><strong>Interno (Internal/Embedded Styles):</strong> Se define dentro de la etiqueta <code>&lt;style&gt;</code> en la sección <code>&lt;head&gt;</code>.
-                    <pre><code>&lt;!DOCTYPE html&gt;
+                    <pre><code class="copyable-code">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
     &lt;style&gt;
@@ -72,11 +76,11 @@ h1 {
 &lt;/html&gt;</code></pre>
                 </li>
                 <li><strong>Externo (External Stylesheet):</strong> El método más recomendado. Los estilos se escriben en un archivo <code>.css</code> separado y se enlazan al HTML usando la etiqueta <code>&lt;link&gt;</code>.
-                    <pre><code>&lt;!-- En tu archivo HTML --&gt;
+                    <pre><code class="copyable-code">&lt;!-- En tu archivo HTML --&gt;
 &lt;head&gt;
     &lt;link rel="stylesheet" href="styles.css"&gt;
 &lt;/head&gt;</code></pre>
-                    <pre><code>/* En tu archivo styles.css */
+                    <pre><code class="copyable-code">/* En tu archivo styles.css */
 p {
     font-family: Arial, sans-serif;
 }</code></pre>
@@ -124,7 +128,7 @@ p {
 
             <h3>a. Flexbox (Módulo Flexible Box Layout)</h3>
             <p>Un modelo de diseño unidimensional para organizar elementos en una sola fila o columna. Ideal para distribuir espacio y alinear contenido.</p>
-            <pre><code>.contenedor-flex {
+            <pre><code class="copyable-code">.contenedor-flex {
     display: flex;
     justify-content: space-around; /* Distribuye ítems con espacio alrededor */
     align-items: center; /* Centra ítems en el eje transversal */
@@ -141,7 +145,7 @@ p {
 
             <h3>b. CSS Grid (Módulo Grid Layout)</h3>
             <p>Un sistema de diseño bidimensional para organizar elementos en filas y columnas simultáneamente. Ideal para diseños de página completos.</p>
-            <pre><code>.contenedor-grid {
+            <pre><code class="copyable-code">.contenedor-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
     gap: 15px; /* Espacio entre celdas */
@@ -162,7 +166,7 @@ p {
             <p>Permite que los sitios web se adapten y se vean bien en una variedad de dispositivos (escritorio, tablets, teléfonos).</p>
             <ul>
                 <li><strong>Media Queries:</strong> Reglas CSS que aplican estilos solo si una condición (ej., ancho de pantalla) es verdadera.
-                    <pre><code>/* Estilos por defecto para móviles */
+                    <pre><code class="copyable-code">/* Estilos por defecto para móviles */
 body {
     font-size: 16px;
 }
@@ -184,7 +188,7 @@ body {
             <h3>d. Transiciones y Animaciones</h3>
             <ul>
                 <li><strong>Transiciones:</strong> Permiten cambiar gradualmente el valor de una propiedad CSS.
-                    <pre><code>.mi-boton {
+                    <pre><code class="copyable-code">.mi-boton {
     background-color: blue;
     color: white;
     padding: 10px 20px;
@@ -196,7 +200,7 @@ body {
 }</code></pre>
                 </li>
                 <li><strong>Animaciones (<code>@keyframes</code>):</strong> Crean secuencias de animación más complejas.
-                    <pre><code>@keyframes slideIn {
+                    <pre><code class="copyable-code">@keyframes slideIn {
     from {
         transform: translateX(-100%);
         opacity: 0;
@@ -217,7 +221,7 @@ body {
 
             <h3>e. Variables CSS (Custom Properties)</h3>
             <p>Permiten definir valores reutilizables en un solo lugar y usarlos en todo el CSS, mejorando la mantenibilidad.</p>
-            <pre><code>:root { /* Selector global */
+            <pre><code class="copyable-code">:root { /* Selector global */
     --color-primario: #3b82f6;
     --espaciado-card: 2rem;
 }
@@ -246,8 +250,9 @@ body {
     </div>
 
     <footer class="footer">
-        <p>&copy; 2025 Teoría de CSS. Todos los derechos reservados.</p>
+        <p>&copy; <span id="current-year"></span> Teoría de CSS. Todos los derechos reservados.</p>
     </footer>
 
+    <script src="css-blog.js" defer></script>
 </body>
 </html>

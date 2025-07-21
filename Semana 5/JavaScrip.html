@@ -16,6 +16,10 @@
     </header>
 
     <div class="container">
+        <div id="table-of-contents" style="background-color: #f0f8ff; border-left: 4px solid #3b82f6; padding: 15px; margin-bottom: 30px; border-radius: 5px;">
+            <h2 style="font-size: 1.5em; margin-bottom: 10px; color: #333;">Contenidos del Artículo</h2>
+            </div>
+
         <div class="blog-card">
             <h2>Introducción</h2>
             <p>JavaScript (JS) es un lenguaje de programación de alto nivel, interpretado o compilado Just-in-Time, multiparadigma, dinámico y débilmente tipado. Es fundamental para el desarrollo web front-end, permitiendo crear páginas web interactivas y dinámicas. Sin embargo, su alcance ha crecido exponencialmente, abarcando el desarrollo back-end (con Node.js), aplicaciones móviles (con React Native, NativeScript), aplicaciones de escritorio (con Electron), e incluso Internet de las Cosas (IoT) y machine learning.</p>
@@ -50,7 +54,7 @@
                     </ul>
                 </li>
                 <li><strong>Débilmente Tipado:</strong> Permite la coerción de tipos automática. Por ejemplo:
-                    <pre><code>console.log(5 + '5'); // Resultado: '55'</code></pre>
+                    <pre><code class="copyable-code">console.log(5 + '5'); // Resultado: '55'</code></pre>
                 </li>
                 <li><strong>Orientado a Eventos:</strong> Permite que el código reaccione a acciones del usuario o eventos del sistema.</li>
                 <li><strong>Sincrónico y de Hilo Único (Single-Threaded):</strong> Ejecuta el código en un solo hilo. La asincronía se maneja a través del "event loop".</li>
@@ -63,11 +67,11 @@
             <h3>a. Variables y Tipos de Datos</h3>
             <ul>
                 <li><strong>Variables:</strong> Contenedores para almacenar datos.</li>
-                    <ul>
-                        <li><code>var</code>: Declaración antigua. Alcance de función o global.</li>
-                        <li><code>let</code>: (ES6+) Alcance de bloque (<code>{}</code>). Preferido.</li>
-                        <li><code>const</code>: (ES6+) Alcance de bloque. Para valores que no cambiarán.</li>
-                    </ul>
+                <ul>
+                    <li><code>var</code>: Declaración antigua. Alcance de función o global.</li>
+                    <li><code>let</code>: (ES6+) Alcance de bloque (<code>{}</code>). Preferido.</li>
+                    <li><code>const</code>: (ES6+) Alcance de bloque. Para valores que no cambiarán.</li>
+                </ul>
                 <li><strong>Tipos de Datos Primitivos:</strong>
                     <ul>
                         <li><code>string</code>: Cadena de texto (ej. <code>"Hola Mundo"</code>)</li>
@@ -83,8 +87,8 @@
                     <ul>
                         <li><code>object</code>: Colecciones de datos y funcionalidades. Incluye:
                             <ul>
-                                <li><strong>Objetos Literales:</strong> <code>{ nombre: "Juan", edad: 30 }</code></li>
-                                <li><strong>Arrays (Arreglos):</strong> <code>[1, 2, 3, "texto"]</code></li>
+                                <li><strong>Objetos Literales:</strong> <code class="copyable-code">{ nombre: "Juan", edad: 30 }</code></li>
+                                <li><strong>Arrays (Arreglos):</strong> <code class="copyable-code">[1, 2, 3, "texto"]</code></li>
                                 <li><strong>Funciones:</strong> (también son objetos de "primera clase")</li>
                             </ul>
                         </li>
@@ -123,19 +127,19 @@
             <ul>
                 <li>Bloques de código reutilizable.</li>
                 <li><strong>Declaración de Función:</strong>
-                    <pre><code>function saludar(nombre) {
+                    <pre><code class="copyable-code">function saludar(nombre) {
     return "Hola, " + nombre + "!";
 }
 console.log(saludar("María"));</code></pre>
                 </li>
                 <li><strong>Expresión de Función:</strong>
-                    <pre><code>const despedir = function(nombre) {
+                    <pre><code class="copyable-code">const despedir = function(nombre) {
     return "Adiós, " + nombre + "!";
 };
 console.log(despedir("Pedro"));</code></pre>
                 </li>
                 <li><strong>Funciones Flecha (Arrow Functions) (ES6+):</strong>
-                    <pre><code>const sumar = (a, b) => a + b;
+                    <pre><code class="copyable-code">const sumar = (a, b) => a + b;
 console.log(sumar(5, 3));</code></pre>
                 </li>
                 <li><strong>Alcance (Scope):</strong> Global, de Función, de Bloque.</li>
@@ -148,7 +152,7 @@ console.log(sumar(5, 3));</code></pre>
                 <li><strong>Creación de Objetos:</strong>
                     <ul>
                         <li><strong>Literal de Objeto:</strong>
-                            <pre><code>const persona = {
+                            <pre><code class="copyable-code">const persona = {
     nombre: "Ana",
     edad: 25,
     saludar: function() {
@@ -158,7 +162,7 @@ console.log(sumar(5, 3));</code></pre>
 persona.saludar();</code></pre>
                         </li>
                         <li><strong>Clases (ES6+):</strong> Sintaxis azucarada sobre los prototipos.
-                            <pre><code>class Coche {
+                            <pre><code class="copyable-code">class Coche {
     constructor(marca) {
         this.marca = marca;
     }
@@ -180,7 +184,7 @@ miCoche.arrancar();</code></pre>
             <ul>
                 <li><strong>Callbacks:</strong> Funciones que se ejecutan al completar una operación asíncrona.</li>
                 <li><strong>Promises (Promesas) (ES6+):</strong> Objetos que representan la eventual finalización de una operación.
-                    <pre><code>// Ejemplo simplificado de una promesa
+                    <pre><code class="copyable-code">// Ejemplo simplificado de una promesa
 const miPromesa = new Promise((resolve, reject) => {
     setTimeout(() => {
         const exito = true; // Simula una operación exitosa o fallida
@@ -195,86 +199,4 @@ const miPromesa = new Promise((resolve, reject) => {
 miPromesa
     .then(mensaje => console.log(mensaje))
     .catch(error => console.error(error));</code></pre>
-                </li>
-                <li><strong>Async/Await (ES2017+):</strong> Sintaxis para trabajar con Promesas de forma más síncrona.
-                    <pre><code>async function obtenerDatosSimulados() {
-    try {
-        const respuesta = await new Promise(resolve => setTimeout(() => resolve("Datos del servidor"), 1500));
-        console.log(respuesta);
-    } catch (error) {
-        console.error('Ha ocurrido un error:', error);
-    }
-}
-obtenerDatosSimulados();</code></pre>
-                </li>
-                <li><strong>Event Loop:</strong> Mecanismo que permite a JS manejar la asincronía.</li>
-            </ul>
-
-            <h3>g. Manipulación del DOM (Document Object Model)</h3>
-            <p>JavaScript interactúa con la estructura HTML como un árbol de nodos.</p>
-            <ul>
-                <li><strong>Seleccionar elementos:</strong>
-                    <pre><code>const miElemento = document.getElementById('miId');
-const elementosClase = document.querySelectorAll('.miClase');</code></pre>
-                </li>
-                <li><strong>Modificar contenido:</strong>
-                    <pre><code>miElemento.textContent = 'Nuevo Contenido';
-miElemento.innerHTML = '&lt;strong&gt;Contenido HTML&lt;/strong&gt;';</code></pre>
-                </li>
-                <li><strong>Cambiar estilos:</strong>
-                    <pre><code>miElemento.style.color = 'blue';
-miElemento.style.fontSize = '20px';</code></pre>
-                </li>
-                <li><strong>Manejar eventos:</strong>
-                    <pre><code>const boton = document.getElementById('miBoton');
-boton.addEventListener('click', function() {
-    alert('¡Botón clickeado!');
-});</code></pre>
-                </li>
-            </ul>
-        </div> <div class="blog-card">
-            <h2>4. Entornos de Ejecución de JavaScript</h2>
-            <ul>
-                <li><strong>Navegadores Web:</strong> El entorno original y más común (Chrome, Firefox, Safari).</li>
-                <li><strong>Node.js:</strong> Entorno de ejecución de JavaScript del lado del servidor. Permite construir APIs, herramientas de línea de comandos, etc.
-                    <pre><code>// Ejemplo simple en Node.js (guardar como app.js y ejecutar con 'node app.js')
-console.log("¡Hola desde Node.js!");
-const http = require('http');
-http.createServer((req, res) => {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Servidor Node.js funcionando!\n');
-}).listen(3000);
-console.log('Servidor corriendo en http://localhost:3000/');</code></pre>
-                </li>
-                <li><strong>Otros:</strong> Deno, React Native, Electron, etc.</li>
-            </ul>
-        </div>
-
-        <div class="blog-card">
-            <h2>5. Conceptos Avanzados y Ecosistema</h2>
-            <ul>
-                <li><strong>Módulos (ES Modules):</strong> (ES6+) Para organizar y reutilizar código con <code>import</code> y <code>export</code>.</li>
-                <li><strong>JSON (JavaScript Object Notation):</strong> Formato ligero de intercambio de datos.</li>
-                <li><strong>AJAX:</strong> Concepto de solicitudes asíncronas al servidor sin recargar la página.</li>
-                <li><strong>Web APIs:</strong> APIs proporcionadas por los navegadores (DOM, Fetch API, etc.).</li>
-                <li><strong>NPM (Node Package Manager):</strong> Gestor de paquetes para JS.</li>
-                <li><strong>Frameworks y Librerías:</strong>
-                    <ul>
-                        <li><strong>Front-end:</strong> React, Angular, Vue.js</li>
-                        <li><strong>Back-end:</strong> Express.js (para Node.js)</li>
-                    </ul>
-                </li>
-                <li><strong>TypeScript:</strong> Un "superset" de JavaScript que añade tipado estático opcional.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div style="text-align: center; margin-top: 0.5px; margin-bottom: 40px;">
-        <a href="../index.html" class="home-button">Ir al Inicio</a>
-    </div>
-
-    <footer class="footer">
-        <p>&copy; 2025 Teoría de JavaScript. Todos los derechos reservados.</p>
-    </footer>
-</body>
-</html>
+</li>

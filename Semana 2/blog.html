@@ -1,104 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog - Códigos Emmet</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Blog - Códigos Emmet</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50 text-gray-800 leading-relaxed">
 
-  <header class="bg-white shadow p-6">
-    <div class="container mx-auto text-center">
-      <h1 class="text-3xl font-bold text-blue-600">Códigos Emmet</h1>
-      <p class="text-lg text-gray-600"><strong>Herramientas para escribir HTML y CSS más rápido</strong></p>
-    </div>
-  </header>
+    <header class="bg-white shadow p-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold text-blue-600">Códigos Emmet</h1>
+            <p class="text-lg text-gray-600"><strong>Herramientas para escribir HTML y CSS más rápido</strong></p>
+        </div>
+    </header>
 
-  <main class="max-w-4xl mx-auto px-6 py-10">
-    <article class="bg-white p-8 rounded shadow">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4">¿Qué es Emmet?</h2>
-      <p class="mb-4">
-        Emmet es una herramienta que permite escribir código HTML y CSS de manera más rápida mediante abreviaciones que se expanden automáticamente. Está integrada en la mayoría de los editores modernos como VS Code.
-      </p>
+    <main class="max-w-4xl mx-auto px-6 py-10">
+        <article class="bg-white p-8 rounded shadow">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">¿Qué es Emmet?</h2>
+            <p class="mb-4">
+                Emmet es una herramienta que permite escribir código HTML y CSS de manera más rápida mediante abreviaciones que se expanden automáticamente. Está integrada en la mayoría de los editores modernos como VS Code.
+            </p>
 
-      <h3 class="text-xl font-semibold mt-6 mb-2">Beneficios de usar Emmet</h3>
-      <ul class="list-disc list-inside mb-4">
-        <li>Ahorra tiempo en la escritura de código.</li>
-        <li>Reduce errores de tipeo.</li>
-        <li>Permite construir estructuras HTML complejas con menos esfuerzo.</li>
-        <li>Mejora la productividad del desarrollador frontend.</li>
-      </ul>
+            <h3 class="text-xl font-semibold mt-6 mb-2">Beneficios de usar Emmet</h3>
+            <ul class="list-disc list-inside mb-4">
+                <li>Ahorra tiempo en la escritura de código.</li>
+                <li>Reduce errores de tipeo.</li>
+                <li>Permite construir estructuras HTML complejas con menos esfuerzo.</li>
+                <li>Mejora la productividad del desarrollador frontend.</li>
+            </ul>
 
-      <h3 class="text-xl font-semibold mt-6 mb-2">Ejemplos de uso</h3>
-      <div class="bg-gray-100 p-4 rounded mb-4">
-        <p><strong>1. Elementos HTML simples:</strong></p>
-        <code class="block bg-white p-2 my-2 rounded">&gt; div</code>
-        <p>Resultado: <code>&lt;div&gt;&lt;/div&gt;</code></p>
-      </div>
+            <h3 class="text-xl font-semibold mt-6 mb-2">Ejemplos de uso</h3>
+            <div class="bg-gray-100 p-4 rounded mb-4 code-example-container">
+                <p><strong>1. Elementos HTML simples:</strong></p>
+                <code class="block bg-white p-2 my-2 rounded emmet-code-block">&gt; div</code>
+                <p>Resultado: <code>&lt;div&gt;&lt;/div&gt;</code></p>
+            </div>
 
-      <div class="bg-gray-100 p-4 rounded mb-4">
-        <p><strong>2. Elementos con clase e ID:</strong></p>
-        <code class="block bg-white p-2 my-2 rounded">div#header</code>
-        <p>Resultado: <code>&lt;div id="header"&gt;&lt;/div&gt;</code></p>
-        <code class="block bg-white p-2 my-2 rounded">div.container</code>
-        <p>Resultado: <code>&lt;div class="container"&gt;&lt;/div&gt;</code></p>
-      </div>
+            <div class="bg-gray-100 p-4 rounded mb-4 code-example-container">
+                <p><strong>2. Elementos con clase e ID:</strong></p>
+                <code class="block bg-white p-2 my-2 rounded emmet-code-block">div#header</code>
+                <p>Resultado: <code>&lt;div id="header"&gt;&lt;/div&gt;</code></p>
+                <code class="block bg-white p-2 my-2 rounded emmet-code-block">div.container</code>
+                <p>Resultado: <code>&lt;div class="container"&gt;&lt;/div&gt;</code></p>
+            </div>
 
-      <div class="bg-gray-100 p-4 rounded mb-4">
-        <p><strong>3. Jerarquía de elementos:</strong></p>
-        <code class="block bg-white p-2 my-2 rounded">ul>li*3</code>
-        <p>Resultado:</p>
-        <pre class="bg-white p-2 rounded text-sm overflow-auto">
+            <div class="bg-gray-100 p-4 rounded mb-4 code-example-container">
+                <p><strong>3. Jerarquía de elementos:</strong></p>
+                <code class="block bg-white p-2 my-2 rounded emmet-code-block">ul>li*3</code>
+                <p>Resultado:</p>
+                <pre class="bg-white p-2 rounded text-sm overflow-auto">
 &lt;ul&gt;
   &lt;li&gt;&lt;/li&gt;
   &lt;li&gt;&lt;/li&gt;
   &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
-        </pre>
-      </div>
+                </pre>
+            </div>
 
-      <div class="bg-blue-100 p-4 rounded mt-8">
-        <h3 class="text-lg font-semibold text-blue-900 mb-2">Conclusión</h3>
-        <p>Emmet es una herramienta imprescindible para todo desarrollador frontend. Dominar sus abreviaciones permite escribir estructuras HTML y CSS con rapidez y precisión.</p>
-      </div>
-    </article>
-  </main>
+            <div class="bg-blue-100 p-4 rounded mt-8">
+                <h3 class="text-lg font-semibold text-blue-900 mb-2">Conclusión</h3>
+                <p>Emmet es una herramienta imprescindible para todo desarrollador frontend. Dominar sus abreviaciones permite escribir estructuras HTML y CSS con rapidez y precisión.</p>
+            </div>
+        </article>
+    </main>
 
-  <main class="max-w-4xl mx-auto px-6 py-10">
-    <article class="bg-white p-8 rounded shadow">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4">Ejercicios Desarrollados en clase</h2>
-      <p class="mb-4">
+    <main class="max-w-4xl mx-auto px-6 py-10">
+        <article class="bg-white p-8 rounded shadow">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Ejercicios Desarrollados en clase</h2>
+            <p class="mb-4">
+                <p><strong><h1>Pregunta 01</h1></strong></p>
+                <code class="block bg-white p-2 my-2 rounded emmet-code-block">nav.nav>ul>li*4>a[href="page$4.html"]{Link$4}</code>
 
-        <strong><h1>Pregunta 01</h1></strong>
-        nav.nav>ul>li*4>a[href="page$4.html"]{Link$4}
+                <p><strong><h3>Pregunta 02</h3></strong></p>
+                <code class="block bg-white p-2 my-2 rounded emmet-code-block">table.table>(thead>tr>(th[scope=col]{&#35;}+th[scope=col]{First}+th[scope=col]{Second}+th[scope=col]{Three}))+(tbody>(tr>th[scope=row]{$}+td{Mark}+td{Otto}+td{jhonson})*3)</code>
 
-        <strong><h3>Pregunta 02</h3></strong>
-        table.table>(thead>tr>(th[scope=col]{&#35;}+th[scope=col]{First}+th[scope=col]{Second}+th[scope=col]{Three}))+(tbody>(tr>th[scope=row]{$}+td{Mark}+td{Otto}+td{jhonson})*3)
+                <p><strong><h3>Pregunta 03</h3></strong></p>
+                <code class="block bg-white p-2 my-2 rounded emmet-code-block">div#container>header#header+nav#nav+section#section>article#article+aside#aside+footer#footer</code>
 
-        <strong><h3>Pregunta 03</h3></strong>
-        div#container>header#header+nav#nav+section#section>article#article+aside#aside+footer#footer
+                <p><strong><h3>pregunta 04</h3></strong></p>
+                <code class="block bg-white p-2 my-2 rounded emmet-code-block">table>thead>tr>th#id{ID}+th#nombres{Nombres}+th#apellidos{Apellidos}+th#direccion{Dirección}+tbody>tr*20>td#id{$}+td+nombres+td+apellidos+td+direccion</code>
+            
+                <p><strong><h3>Pregunta 05</h3></strong></p>
+                <code class="block bg-white p-2 my-2 rounded emmet-code-block">table>tbody>tr*20#fila{$}[id="fila{20-$}"]>td*2</code>
 
-        <strong><h3>pregunta 04</h3></strong>
-        table>thead>tr>th#id{ID}+th#nombres{Nombres}+th#apellidos{Apellidos}+th#direccion{Dirección}+
-        tbody>tr*20>td#id{$}+td+nombres+td+apellidos+td+direccion
-  
-        <strong><h3>Pregunta 05</h3></strong>
-        table>tbody>tr*20#fila{$}[id="fila{20-$}"]>td*2
+                <p><strong><h3>Pregunta 06</h3></strong></p>
+                <code class="block bg-white p-2 my-2 rounded emmet-code-block">html:5>head>title{Desarrollo Web}+body>header>h1{Importante para desarrollo web}+ul>li{Estructura HTML básica}+li{Meta etiquetas para responsividad}+li{Enlace a archivo CSS}+li{Inclusión de JavaScript}</code>
+            </p>
+        </article>
+    </main>
 
-        <strong><h3>Pregunta 06</h3></strong>
-        html:5>head>title{Desarrollo Web}+body>header>h1{Importante para desarrollo web}+ul>li{Estructura HTML básica}+li{Meta etiquetas para responsividad}+li{Enlace a archivo CSS}+li{Inclusión de JavaScript}
-      </p>
-    </article>
-  </main>
+    <footer class="bg-white shadow mt-10 p-6 text-center text-sm text-gray-500">
+        © <span id="current-year"></span> Alvaro Pinares Taype
+    </footer>
 
-  <footer class="bg-white shadow mt-10 p-6 text-center text-sm text-gray-500">
-    © 2025 Alvaro Pinares Taype
-  </footer>
-
-  <div class="mt-8 mb-8 text-center">
-    <a href="../index.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Ir al Inicio</a>
-  </div>
-  
+    <div class="mt-8 mb-8 text-center">
+        <a href="../index.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Ir al Inicio</a>
+    </div>
+    
+    <script src="blog.js" defer></script>
 </body>
 </html>

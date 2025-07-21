@@ -16,6 +16,12 @@
     </header>
 
     <div class="container">
+        <!-- Contenedor para la Tabla de Contenidos -->
+        <div id="table-of-contents" style="background-color: #f0f8ff; border-left: 4px solid #3b82f6; padding: 15px; margin-bottom: 30px; border-radius: 5px;">
+            <h2 style="font-size: 1.5em; margin-bottom: 10px; color: #333;">Contenidos del Artículo</h2>
+            <!-- El JS generará la lista aquí -->
+        </div>
+
         <div class="blog-card">
             <h2>Principios Fundamentales de React</h2>
             <p>React se basa en un conjunto de principios clave que guían su diseño y su forma de trabajar con las interfaces de usuario. Comprenderlos es crucial para escribir código React efectivo y escalable.</p>
@@ -23,7 +29,7 @@
             <h3>1. Declarativo vs. Imperativo</h3>
             <ul>
                 <li><strong>Declarativo:</strong> En React, tú describes <strong>qué</strong> quieres que se vea la UI en un momento dado, en función del estado de tus datos. React se encarga de averiguar <strong>cómo</strong> realizar los cambios en el DOM para que la UI coincida con tu descripción.
-                    <pre><code>// Enfoque Declarativo (React):
+                    <pre><code class="copyable-code">// Enfoque Declarativo (React):
 // describes el resultado final
 function MiComponente({ valor }) {
     return &lt;p&gt;El valor es: {valor}&lt;/p&gt;;
@@ -31,7 +37,7 @@ function MiComponente({ valor }) {
 // React actualiza automáticamente el DOM cuando 'valor' cambia.</code></pre>
                 </li>
                 <li><strong>Imperativo:</strong> Con manipulación directa del DOM (JavaScript puro), le das instrucciones paso a paso a la computadora sobre cómo cambiar la UI.
-                    <pre><code>// Enfoque Imperativo (JS puro):
+                    <pre><code class="copyable-code">// Enfoque Imperativo (JS puro):
 // instrucciones paso a paso para el DOM
 const miParrafo = document.getElementById('miParrafo');
 if (algunEstado) {
@@ -87,7 +93,7 @@ if (algunEstado) {
 
             <h3>Paso 1: Verificar Node.js y npm/Yarn</h3>
             <p>Abre tu terminal o línea de comandos y ejecuta los siguientes comandos para verificar si ya los tienes instalados:</p>
-            <pre><code>node -v
+            <pre><code class="copyable-code">node -v
 npm -v
 # O si prefieres Yarn:
 yarn -v</code></pre>
@@ -104,19 +110,19 @@ yarn -v</code></pre>
 
             <h4>Opción A: Usando Vite (Recomendado)</h4>
             <p>Vite es más rápido y eficiente. Abre tu terminal en la carpeta donde deseas crear tu proyecto y ejecuta:</p>
-            <pre><code>npm create vite@latest mi-primer-react-app -- --template react</code></pre>
+            <pre><code class="copyable-code">npm create vite@latest mi-primer-react-app -- --template react</code></pre>
             <ul>
                 <li><code>npm create vite@latest</code>: Llama al ejecutable de Vite para crear un proyecto.</li>
                 <li><code>mi-primer-react-app</code>: Es el nombre de tu proyecto (puedes cambiarlo). Se creará una nueva carpeta con este nombre.</li>
                 <li><code>-- --template react</code>: Indica a Vite que use la plantilla de React.</li>
             </ul>
             <p>Luego, navega a la carpeta del proyecto e instala las dependencias:</p>
-            <pre><code>cd mi-primer-react-app
+            <pre><code class="copyable-code">cd mi-primer-react-app
 npm install</code></pre>
 
             <h4>Opción B: Usando Create React App (CRA)</h4>
             <p>Si prefieres la herramienta tradicional, usa el siguiente comando:</p>
-            <pre><code>npx create-react-app mi-primer-react-app</code></pre>
+            <pre><code class="copyable-code">npx create-react-app mi-primer-react-app</code></pre>
             <ul>
                 <li><code>npx</code>: Ejecuta un paquete de npm sin instalarlo globalmente.</li>
                 <li><code>create-react-app</code>: Es el comando para generar el proyecto.</li>
@@ -126,7 +132,7 @@ npm install</code></pre>
 
             <h3>Paso 4: Iniciar el Servidor de Desarrollo</h3>
             <p>Una vez que las dependencias estén instaladas (o que CRA haya terminado), navega a la carpeta de tu proyecto (si usaste Vite) y ejecuta el comando para iniciar el servidor de desarrollo:</p>
-            <pre><code># Si usaste Vite:
+            <pre><code class="copyable-code"># Si usaste Vite:
 cd mi-primer-react-app
 npm run dev
 
@@ -142,7 +148,8 @@ npm start</code></pre>
     </div>
 
     <footer class="footer">
-        <p>&copy; 2025 Principios y Instalación de React. Todos los derechos reservados.</p>
+        <p>&copy; <span id="current-year"></span> Principios y Instalación de React. Todos los derechos reservados.</p>
     </footer>
+    <script src="react-princ.js" defer></script>
 </body>
 </html>

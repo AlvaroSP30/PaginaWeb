@@ -16,6 +16,12 @@
     </header>
 
     <div class="container">
+        <!-- Contenedor para la Tabla de Contenidos -->
+        <div id="table-of-contents" style="background-color: #f0f8ff; border-left: 4px solid #3b82f6; padding: 15px; margin-bottom: 30px; border-radius: 5px;">
+            <h2 style="font-size: 1.5em; margin-bottom: 10px; color: #333;">Contenidos del Artículo</h2>
+            <!-- El JS generará la lista aquí -->
+        </div>
+
         <div class="blog-card">
             <h2>Introducción a React</h2>
             <p><strong>React</strong> (a menudo llamado React.js o ReactJS) es una librería de JavaScript de código abierto y declarativa para construir interfaces de usuario (UI) interactivas y eficientes. Fue creada por Facebook (ahora Meta) y es mantenida por una comunidad de desarrolladores. React se centra en la idea de componentes reutilizables, lo que facilita el desarrollo, la gestión y la escalabilidad de aplicaciones web complejas, especialmente las Single Page Applications (SPAs).</p>
@@ -50,7 +56,7 @@
             <p>Son los bloques de construcción de cualquier aplicación React. Encapsulan lógica, estado y la interfaz de usuario.</p>
             <ul>
                 <li><strong>Componentes de Clase (menos comunes hoy en día):</strong>
-                    <pre><code>import React from 'react';
+                    <pre><code class="copyable-code">import React from 'react';
 
 class Saludo extends React.Component {
     render() {
@@ -60,7 +66,7 @@ class Saludo extends React.Component {
 // Uso: &lt;Saludo nombre="Mundo" /&gt;</code></pre>
                 </li>
                 <li><strong>Componentes Funcionales (preferidos con Hooks):</strong>
-                    <pre><code>import React from 'react';
+                    <pre><code class="copyable-code">import React from 'react';
 
 function SaludoFuncional(props) {
     return &lt;h1&gt;Hola, {props.nombre}!&lt;/h1&gt;;
@@ -73,10 +79,10 @@ function SaludoFuncional(props) {
             <p>Una extensión de la sintaxis de JavaScript para describir la UI. Permite escribir HTML-like en JS.</p>
             <ul>
                 <li><strong>Con JSX (lo que escribes):</strong>
-                    <pre><code>&lt;h1&gt;Hola Mundo&lt;/h1&gt;</code></pre>
+                    <pre><code class="copyable-code">&lt;h1&gt;Hola Mundo&lt;/h1&gt;</code></pre>
                 </li>
                 <li><strong>Incorporando lógica JS con llaves {}:</strong>
-                    <pre><code>const nombre = "React";
+                    <pre><code class="copyable-code">const nombre = "React";
 const elemento = &lt;h1&gt;Hola, {nombre}!&lt;/h1&gt;;</code></pre>
                 </li>
                 <li><strong>Reglas clave:</strong> Un solo elemento raíz, atributos en <code>camelCase</code> (ej. <code>className</code>), eventos en <code>camelCase</code> (ej. <code>onClick</code>).</li>
@@ -84,7 +90,7 @@ const elemento = &lt;h1&gt;Hola, {nombre}!&lt;/h1&gt;;</code></pre>
 
             <h3>c. Props (Propiedades)</h3>
             <p>Argumentos que se pasan a los componentes desde su componente padre. Son de <strong>solo lectura</strong> (inmutables).</p>
-            <pre><code>function Boton({ texto, onClick }) { // Destructuring de props
+            <pre><code class="copyable-code">function Boton({ texto, onClick }) { // Destructuring de props
     return &lt;button onClick={onClick}&gt;{texto}&lt;/button&gt;;
 }
 
@@ -93,7 +99,7 @@ const elemento = &lt;h1&gt;Hola, {nombre}!&lt;/h1&gt;;</code></pre>
 
             <h3>d. Estado (State)</h3>
             <p>Datos internos de un componente que pueden cambiar con el tiempo. Cuando el estado cambia, React re-renderiza el componente.</p>
-            <pre><code>import React, { useState } from 'react';
+            <pre><code class="copyable-code">import React, { useState } from 'react';
 
 function Contador() {
     const [cuenta, setCuenta] = useState(0); // [estado actual, función para actualizar estado]
@@ -119,7 +125,7 @@ function Contador() {
             <ul>
                 <li><strong><code>useState</code>:</strong> Para añadir estado.</li>
                 <li><strong><code>useEffect</code>:</strong> Para efectos secundarios (llamadas a API, suscripciones, etc.).
-                    <pre><code>import React, { useState, useEffect } from 'react';
+                    <pre><code class="copyable-code">import React, { useState, useEffect } from 'react';
 
 function FetchData() {
     const [data, setData] = useState(null);
@@ -144,7 +150,7 @@ function FetchData() {
 
             <h3>g. Renderizado Condicional</h3>
             <p>Permite renderizar diferentes elementos o componentes basados en una condición.</p>
-            <pre><code>function MensajeLogin(props) {
+            <pre><code class="copyable-code">function MensajeLogin(props) {
     const estaLogueado = props.estaLogueado;
     if (estaLogueado) {
         return &lt;p&gt;Bienvenido de nuevo!&lt;/p&gt;;
@@ -154,7 +160,7 @@ function FetchData() {
 
             <h3>h. Listas y Keys</h3>
             <p>Al renderizar una lista, React requiere una prop <code>key</code> única para cada elemento, lo que ayuda a optimizar el rendimiento.</p>
-            <pre><code>function ListaElementos(props) {
+            <pre><code class="copyable-code">function ListaElementos(props) {
     const items = props.items;
     return (
         &lt;ul&gt;
@@ -187,8 +193,8 @@ function FetchData() {
             <h2>6. ¿Cómo empezar con React?</h2>
             <p>La forma más común es usar <code>Vite</code> o <code>Create React App</code>:</p>
             <ul>
-                <li>Con Vite: <code>npm create vite@latest my-react-app -- --template react</code></li>
-                <li>Con Create React App: <code>npx create-react-app my-react-app</code></li>
+                <li>Con Vite: <code class="copyable-code">npm create vite@latest my-react-app -- --template react</code></li>
+                <li>Con Create React App: <code class="copyable-code">npx create-react-app my-react-app</code></li>
             </ul>
             <p>Estos comandos configuran un proyecto de React con una estructura básica y herramientas de desarrollo como Babel y Webpack.</p>
         </div>
@@ -199,8 +205,9 @@ function FetchData() {
     </div>
 
     <footer class="footer">
-        <p>&copy; 2025 Teoría de React. Todos los derechos reservados.</p>
+        <p>&copy; <span id="current-year"></span> Teoría de React. Todos los derechos reservados.</p>
     </footer>
 
+    <script src="react-blog.js" defer></script>
 </body>
 </html>

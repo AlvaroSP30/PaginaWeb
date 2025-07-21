@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>React: Librería Declarativa para UI</title>
+    <title>Desarrollo de Aplicaciones Web: Arquitectura y Principios</title>
     <link rel="stylesheet" href="Backend.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +16,10 @@
     </header>
 
     <div class="container">
+        <div id="table-of-contents" style="background-color: #f0f8ff; border-left: 4px solid #3b82f6; padding: 15px; margin-bottom: 30px; border-radius: 5px;">
+            <h2 style="font-size: 1.5em; margin-bottom: 10px; color: #333;">Contenidos del Artículo</h2>
+            </div>
+
         <div class="blog-card">
             <h2>Fundamentos del desarrollo Backend</h2>
             <p>Los fundamentos del desarrollo <strong>Backend</strong> son base esencial para construrir aplicaciones web más robustas
@@ -32,30 +36,30 @@
             </ul>
         </div>
 
-    <div class="blog-card">
-    <h2>2. Autenticación basada en tokens</h2>
-    <ul>
-        <li><strong>Concepto:</strong> Un método de verificación de identidad que permite a los usuarios acceder a sistemas sin necesidad de proporcionar credenciales constantemente. Se basa en la emisión de un "token" (datos cifrados) que valida la identidad del usuario por un período determinado.</li>
-        <li><strong>Fundamentos Claves:</strong>
+        <div class="blog-card">
+            <h2>2. Autenticación basada en tokens</h2>
             <ul>
-                <li><strong>Generación de tokens:</strong> Se crea un token único al iniciar sesión.</li>
-                <li><strong>Uso de tokens:</strong> El usuario incluye el token en las peticiones al servidor en lugar de credenciales.</li>
-                <li><strong>Validación de tokens:</strong> El servidor verifica la validez y vigencia del token.</li>
-                <li><strong>Expiración y Renovación:</strong> Los tokens tienen duración limitada y requieren renovación.</li>
-                <li><strong>Seguridad:</strong> Los tokens están cifrados y firmados digitalmente para prevenir manipulación.</li>
+                <li><strong>Concepto:</strong> Un método de verificación de identidad que permite a los usuarios acceder a sistemas sin necesidad de proporcionar credenciales constantemente. Se basa en la emisión de un "token" (datos cifrados) que valida la identidad del usuario por un período determinado.</li>
+                <li><strong>Fundamentos Claves:</strong>
+                    <ul>
+                        <li><strong>Generación de tokens:</strong> Se crea un token único al iniciar sesión.</li>
+                        <li><strong>Uso de tokens:</strong> El usuario incluye el token en las peticiones al servidor en lugar de credenciales.</li>
+                        <li><strong>Validación de tokens:</strong> El servidor verifica la validez y vigencia del token.</li>
+                        <li><strong>Expiración y Renovación:</strong> Los tokens tienen duración limitada y requieren renovación.</li>
+                        <li><strong>Seguridad:</strong> Los tokens están cifrados y firmados digitalmente para prevenir manipulación.</li>
+                    </ul>
+                </li>
             </ul>
-        </li>
-    </ul>
-    <ul>
-        <li><strong>Tipos de token:</strong>
-        <ul>
-            <li><strong>JSON Web Token (JWT): </strong> mpliamente utilizado en aplicaciones web y móviles.</li>
-            <li><strong>OAuth Tokens: </strong> Usados en autenticación delegada para acceder a APIs.</li>
-            <li><strong>SAML Tokens: </strong> Comunes en entornos empresariales.</li>
-        </ul>
-    </ul>
+            <ul>
+                <li><strong>Tipos de token:</strong>
+                <ul>
+                    <li><strong>JSON Web Token (JWT): </strong> mpliamente utilizado en aplicaciones web y móviles.</li>
+                    <li><strong>OAuth Tokens: </strong> Usados en autenticación delegada para acceder a APIs.</li>
+                    <li><strong>SAML Tokens: </strong> Comunes en entornos empresariales.</li>
+                </ul>
+            </ul>
+        </div>
 
-    </div>
         <div class="blog-card">
             <h2>3. Descompresión de Archivos Zips</h2>
             <ul>
@@ -63,13 +67,16 @@
                 <p> Este resumen puede ser una excelente adición a tu portafolio, mostrando tu comprensión de los principios fundamentales del desarrollo backend. </p>
             </ul>
         </div>
+    </div>
         
     <div style="text-align: center; margin-top: 0.5px; margin-bottom: 40px;">
         <a href="../index.html" class="home-button">Ir al Inicio</a>
     </div>
 
     <footer class="footer">
-        <p>&copy; 2025 Teoría de React. Todos los derechos reservados.</p>
+        <p>&copy; <span id="current-year"></span> Teoría de React. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="backend-blog.js" defer></script>
 </body>
 </html>
