@@ -1,35 +1,29 @@
-// Espera a que el DOM esté completamente cargado antes de ejecutar el código
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mensaje de bienvenida al cargar la página
-    alert('¡Bienvenido a la presentación del Sílabus!');
-
-    // 2. Actualizar dinámicamente el año en el footer
+    // 1. Actualizar dinámicamente el año en el footer
     const currentYearSpan = document.getElementById('current-year');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
 
-    // 3. Añadir interactividad a las tarjetas de las semanas
+    // 2. Añadir la animación de aparición escalonada a las tarjetas de las semanas
     const weekCards = document.querySelectorAll('.week-card');
 
-    weekCards.forEach(card => {
-        // Efecto de escala al pasar el mouse por encima
-        card.addEventListener('mouseover', () => {
-            card.style.transform = 'scale(1.02)';
-            card.style.transition = 'transform 0.2s ease-in-out';
-        });
+    weekCards.forEach((card, index) => {
+        // Aplica un retraso a la animación para cada tarjeta
+        card.style.animationDelay = `${index * 0.1}s`;
+        // Añade la clase que activa la animación CSS definida en style.css
+        card.classList.add('animate-fade-in');
 
-        // Restaurar escala al quitar el mouse
-        card.addEventListener('mouseout', () => {
-            card.style.transform = 'scale(1)';
-            card.style.transition = 'transform 0.2s ease-in-out';
-        });
-
-        // Opcional: Mostrar el título de la semana al hacer clic
+        // Opcional: Mostrar el título de la semana al hacer clic (para depuración o futura interactividad)
         card.addEventListener('click', () => {
             const weekTitle = card.querySelector('h3').textContent;
             console.log(`Hiciste clic en: ${weekTitle}`);
-            // Podrías añadir más interactividad aquí, como mostrar más detalles en un modal
+            // Aquí podrías añadir lógica adicional, como abrir un modal con más detalles
         });
     });
+
+    // Nota: Los efectos de escala al pasar el mouse (transform: scale)
+    // y la transición de sombra ahora se manejan directamente con las clases
+    // de Tailwind CSS en el HTML (`hover:shadow-xl transition-all duration-300`)
+    // para un rendimiento óptimo y un código más limpio.
 });

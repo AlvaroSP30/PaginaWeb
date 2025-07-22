@@ -1,21 +1,36 @@
-/* Añade esto al final del archivo */
-.dark {
-  background-color: #1a202c;
-  color: #e2e8f0;
+/* style.css */
+
+/* Establece la fuente Inter como predeterminada para el cuerpo */
+body {
+    font-family: 'Inter', sans-serif;
 }
 
-.dark .card {
-  background-color: #2d3748;
-  color: #f7fafc;
+/* Keyframes para la animación de aparición */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Estilos para tooltips */
-.hidden {
-  display: none;
+/* Estilos iniciales para las tarjetas de la semana (ocultas) */
+.week-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out; /* Transición para el hover */
 }
 
-/* Efecto de carga para tarjetas */
-.grid > div {
-  opacity: 0;
-  transform: translateY(20px);
+/* Clase para aplicar la animación una vez que el JS la active */
+.week-card.animate-fade-in {
+    animation: fadeInUp 0.8s ease-out forwards;
 }
+
+/* Efecto de sombra y transformación en hover (ya en HTML con Tailwind, esto es un recordatorio) */
+/* .week-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px);
+} */

@@ -5,59 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Semana 01 - Presentación del Sílabus</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-40 text-gray-800">
-    <header class="bg-blue-900 text-white py-6 shadow-md">
-        <div class="container mx-auto px-4">
-            <h1 class="text-3xl font-bold">Semana 01 - Presentación del Sílabus</h1>
-            <p class="mt-2 text-lg">Fundamentos de las Tecnologías Web</p>
+<body class="bg-gray-100 text-gray-800 font-inter">
+    <header class="bg-blue-800 text-white py-6 shadow-xl">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-extrabold text-center">Semana 01 - Presentación del Sílabus</h1>
+            <p class="mt-2 text-xl text-center opacity-90">Fundamentos de las Tecnologías Web</p>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-10">
-        <section class="mb-10">
-            <h2 class="text-2xl font-semibold mb-4">¿Qué vimos esta semana?</h2>
-            <p class="text-lg">
+    <main class="container mx-auto px-6 py-12">
+        <section class="mb-12 bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-3xl font-bold mb-5 text-gray-900 border-b-2 border-blue-500 pb-2">¿Qué vimos esta semana?</h2>
+            <p class="text-lg leading-relaxed">
                 En la primera semana del curso, nos enfocamos en comprender los <strong>fundamentos de las tecnologías web</strong>,
                 sentando las bases para el desarrollo de aplicaciones modernas. Se revisó el sílabo completo y se explicó
                 brevemente qué se verá en cada semana.
             </p>
         </section>
 
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition week-card">
-                <h3 class="text-xl font-bold mb-2">Semana 2</h3>
-                <p>Construcción de páginas con HTML y XML.</p>
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 week-card">
+                <h3 class="text-2xl font-bold mb-2 text-blue-700">Semana 2</h3>
+                <p class="text-gray-700">Construcción de páginas con HTML y XML.</p>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition week-card">
-                <h3 class="text-xl font-bold mb-2">Semana 3</h3>
-                <p>Desarrollo Front-End usando la librería CSS Bootstrap.</p>
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 week-card">
+                <h3 class="text-2xl font-bold mb-2 text-blue-700">Semana 3</h3>
+                <p class="text-gray-700">Desarrollo Front-End usando la librería CSS Bootstrap.</p>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition week-card">
-                <h3 class="text-xl font-bold mb-2">Semana 4</h3>
-                <p>Front-End con JavaScript, TypeScript y manipulación del DOM.</p>
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 week-card">
+                <h3 class="text-2xl font-bold mb-2 text-blue-700">Semana 4</h3>
+                <p class="text-gray-700">Front-End con JavaScript, TypeScript y manipulación del DOM.</p>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition week-card">
-                <h3 class="text-xl font-bold mb-2">Semana 5</h3>
-                <p>Aplicaciones con Framework JS y manejo de estilos.</p>
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 week-card">
+                <h3 class="text-2xl font-bold mb-2 text-blue-700">Semana 5</h3>
+                <p class="text-gray-700">Aplicaciones con Framework JS y manejo de estilos.</p>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition week-card">
-                <h3 class="text-xl font-bold mb-2">Semana 6</h3>
-                <p>Eventos, condicionales y bucles usando Framework JS.</p>
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 week-card">
+                <h3 class="text-2xl font-bold mb-2 text-blue-700">Semana 6</h3>
+                <p class="text-gray-700">Eventos, condicionales y bucles usando Framework JS.</p>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition week-card">
-                <h3 class="text-xl font-bold mb-2">Semana 7</h3>
-                <p>Uso de Hooks para el manejo de estados en aplicaciones.</p>
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 week-card">
+                <h3 class="text-2xl font-bold mb-2 text-blue-700">Semana 7</h3>
+                <p class="text-gray-700">Uso de Hooks para el manejo de estados en aplicaciones.</p>
             </div>
         </section>
 
         <div class="mt-12 text-center">
-            <a href="../index.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Volver al Inicio</a>
+            <a href="../index.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors duration-300 text-lg font-semibold shadow-lg">Volver al Inicio</a>
         </div>
     </main>
 
