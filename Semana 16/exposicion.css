@@ -1,0 +1,52 @@
+/* therapymeet-style.css */
+
+/* Custom styles for the hero header */
+.hero-header {
+    background: linear-gradient(135deg, #002147 0%, #003153 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Optional: Add some subtle background patterns or animations */
+.hero-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAwMDAiIGZpbGwtb3BhY2l0eT0iLjA3Ij48cGF0aCBkPSJNMzYgMzZjMC0yLjIyLTMuNTgtNC04LTQtNC40MiAwLTggMS43OC04IDQgMCAyLjIyIDMuNTggOCA4IDggNC40MiAwIDgtNS43OCA4LTh6TTIwIDMyYy0yLjIyIDAtNC0xLjc4LTQtNHM0LTQgNC00IDQgMS43OCA0IDQgMCAyLjIyLTMuNTggOC04IDh6TTQ4IDMyYy0yLjIyIDAtNC0xLjc4LTQtNHM0LTQgNC00IDQgMS43OCA0IDQgMCAyLjIyLTMuNTggOC04IDh6TTIwIDQ0YzAtMi4yMi0zLjU4LTQtOC00LTQuNDIgMC04IDEuNzgtOCA0IDAgMi4yMiAzLjU4IDggOCA4IDQuNDIgMCA4LTUuNzggOC04em0wLTE2Yy0yLjIyIDAtNC0xLjc4LTQtNHM0LTQgNC00IDQgMS43OCA0IDQgMCAyLjIyLTMuNTggOC04IDh6TTMyIDQ0YzAtMi4yMi0zLjU4LTQtOC00LTQuNDIgMC04IDEuNzgtOCA0IDAgMi4yMiAzLjU4IDggOCA4IDQuNDIgMCA4LTUuNzggOC04em0wLTE2Yy0yLjIyIDAtNC0xLjc4LTQtNHM0LTQgNC00IDQgMS43OCA0IDQgMCAyLjIyLTMuNTggOC04IDh6TTQ0IDIwYzAtMi4yMi0zLjU4LTQtOC00LTQuNDIgMC04IDEuNzgtOCA0IDAgy4yMiAzLjU4IDggOCA4IDQuNDIgMCA4LTUuNzggOC04em0wLTE2Yy0yLjIyIDAtNC0xLjc4LTQtNHM0LTQgNC00IDQgMS43OCA0IDQgMCAyLjIyLTMuNTggOC04IDh6TTEyIDIwYzAtMi4yMi0zLjU4LTQtOC00LTQuNDIgMC04IDEuNzgtOCA0IDAgMi4yMiAzLjU4IDggOCA4IDQuNDIgMCA4LTUuNzggOC04eiIvPjwvZz48L2c+PC9zdmc+') repeat;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* General section title styling */
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #3b82f6; /* Tailwind blue-500 */
+    border-radius: 2px;
+}
+
+/* Styles for the navigation when sticky */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}

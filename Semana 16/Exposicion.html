@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TherapyMeet: Conectando emociones y tecnología en cada sesión</title>
+    <link rel="stylesheet" href="exposicion.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="font-inter antialiased text-gray-800 bg-gray-50">
+
+    <nav class="bg-white shadow-md py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold bg-emerald-800">TherapyMeet</a>
+            <ul class="flex space-x-6">
+                <li><a href="#contexto" class="hover:text-blue-600">Contexto</a></li>
+                <li><a href="#cnn" class="hover:text-blue-600">CNN Personalizada</a></li>
+                <li><a href="#entrenamiento" class="hover:text-blue-600">Entrenamiento</a></li>
+                <li><a href="#enlaces" class="hover:text-blue-600">Enlaces</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero-header py-24 text-white text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">TherapyMeet: Conectando emociones y tecnología en cada sesión 🤖</h1>
+            <p class="text-xl md:text-2xl opacity-90">Una solución innovadora para la detección de emociones en tiempo real durante sesiones de terapia online.</p>
+        </div>
+    </header>
+
+    <section id="contexto" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="section-title text-4xl md:text-5xl font-extrabold text-center mb-12 text-gray-900">
+                Contexto del Proyecto
+            </h2>
+
+            <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                    <i class="fas fa-question-circle text-blue-600 mr-3"></i> Problema
+                </h3>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Uno de los retos a los que se enfrentan los psicólogos en las sesiones de terapia en línea es la imposibilidad de observar las emociones y reacciones de los pacientes en tiempo real, algo que resulta más fácil de hacer en un entorno presencial. Esta limitación puede dificultar la empatía y la adaptación de las estrategias terapéuticas.
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                    <i class="fas fa-lightbulb text-blue-600 mr-3"></i> Contexto de la Solución
+                </h3>
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    Nuestro sistema se encarga de reconocer emociones de los pacientes en tiempo real durante las sesiones online. Esto proporciona a los terapeutas una herramienta valiosa para complementar su percepción y ajustar su enfoque de manera más efectiva.
+                </p>
+                <h4 class="text-xl font-semibold text-gray-800 mb-2">Emociones Detectadas:</h4>
+                <ul class="list-disc list-inside text-base text-gray-600 space-y-1 ml-4">
+                    <li>Felicidad 😊</li>
+                    <li>Tristeza 😢</li>
+                    <li>Neutralidad 😐</li>
+                    <li>Enfado 😠</li>
+                    <li>Sorpresa 😮</li>
+                    <li>Asco 🤢</li>
+                    <li>Miedo 😨</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="cnn" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="section-title text-4xl md:text-5xl font-extrabold text-center mb-12 text-gray-900">
+                Arquitectura de la CNN Personalizada
+            </h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    Hemos desarrollado una red neuronal convolucional (CNN) personalizada y optimizada para la detección precisa de las 7 emociones clave.
+                </p>
+                <ul class="list-disc list-inside text-base text-gray-600 space-y-3 ml-4">
+                    <li>
+                        <strong>Capas Convolucionales:</strong> Seis capas convolucionales con tamaños de kernel de 3×3 y 1×1 para una extracción robusta de características.
+                    </li>
+                    <li>
+                        <strong>Normalización y Activación:</strong> Incorporamos <strong>Batch Normalization</strong> y la función de activación <strong>ReLU</strong> después de cada capa convolucional para mejorar la estabilidad y velocidad del entrenamiento.
+                    </li>
+                    <li>
+                        <strong>Reducción de Dimensionalidad:</strong> Utilizamos <strong>Max Pooling (2×2)</strong> para reducir la dimensionalidad de los mapas de características y hacer el modelo más eficiente y menos propenso al sobreajuste.
+                    </li>
+                    <li>
+                        <strong>Capas Densas:</strong> Incluimos dos capas densas (fully connected) con función de activación ReLU.
+                    </li>
+                    <li>
+                        <strong>Regularización:</strong> Una capa de <strong>Dropout (0.2)</strong> se aplica para evitar el sobreajuste, mejorando la capacidad de generalización del modelo.
+                    </li>
+                    <li>
+                        <strong>Capa de Salida:</strong> La capa final cuenta con <strong>7 neuronas</strong>, cada una representando una de las emociones que el sistema es capaz de detectar (feliz, triste, neutral, enojado, sorpresa, disgusto, miedo).
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="entrenamiento" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="section-title text-4xl md:text-5xl font-extrabold text-center mb-12 text-gray-900">
+                Etapas del Entrenamiento y Evaluación
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-cogs text-blue-600 mr-3"></i> Preprocesamiento
+                    </h3>
+                    <ul class="list-disc list-inside text-base text-gray-600 space-y-3 ml-4">
+                        <li>
+                            <strong>Aumento de Datos:</strong> Se aplicaron transformaciones como rotación, zoom y cambios de color utilizando <strong>ImageDataGenerator de Keras</strong> para enriquecer el dataset y mejorar la robustez del modelo.
+                        </li>
+                        <li>
+                            <strong>División del Dataset:</strong> El dataset original de <strong>40,254 imágenes</strong> fue cuidadosamente dividido en conjuntos de entrenamiento, validación y prueba para asegurar una evaluación imparcial del modelo.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-brain text-blue-600 mr-3"></i> Entrenamiento
+                    </h3>
+                    <ul class="list-disc list-inside text-base text-gray-600 space-y-3 ml-4">
+                        <li>
+                            <strong>Optimizador:</strong> Se utilizó el optimizador <strong>Adam</strong> por su eficiencia y buenos resultados en problemas de clasificación de imágenes.
+                        </li>
+                        <li>
+                            <strong>Épocas:</strong> El modelo fue entrenado durante <strong>150 épocas</strong>, permitiendo un aprendizaje profundo y convergencia de los pesos.
+                        </li>
+                        <li>
+                            <strong>Métricas de Monitoreo:</strong> Se monitorearon la <strong>precisión (accuracy) y la pérdida (loss)</strong> durante todo el proceso de entrenamiento para evaluar el rendimiento.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-lg mt-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                    <i class="fas fa-chart-line text-blue-600 mr-3"></i> Evaluación
+                </h3>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Tras el entrenamiento, nuestro modelo alcanzó una <strong>precisión final del 70%</strong> en datos reales. Esto demuestra una capacidad significativa para identificar correctamente las emociones en entornos prácticos, lo que lo convierte en una herramienta prometedora para el apoyo en terapias online.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="enlaces" class="py-16 bg-gray-50 text-center">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <h2 class="section-title text-4xl md:text-5xl font-extrabold text-center mb-12 text-gray-900">
+                Recursos del Proyecto
+            </h2>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                <a href="https://github.com/AlvaroSP30/Reconocimiento_Emociones.git" target="_blank" class="bg-gray-800 text-white px-8 py-4 rounded-lg shadow-lg hover:bg-gray-700 transition-colors duration-300 flex items-center text-xl font-semibold">
+                    <i class="fab fa-github mr-3 text-2xl"></i> Repositorio en GitHub
+                </a>
+                <a href="URL_DESPLIEGUE_DEL_PROYECTO" target="_blank" class="bg-blue-600 text-white px-8 py-4 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300 flex items-center text-xl font-semibold">
+                    <i class="fas fa-rocket mr-3 text-2xl"></i> Enlace de Despliegue
+                </a>
+            </div>
+            <p class="text-sm text-gray-500 mt-4">
+                (Recuerda reemplazar "URL_GITHUB_DEL_PROYECTO" y "URL_DESPLIEGUE_DEL_PROYECTO" con los enlaces reales de tu proyecto)
+            </p>
+        </div>
+    </section>
+
+    <footer class="footer py-6 bg-gray-800 text-white text-center">
+        <div class="container mx-auto px-6">
+            <p>Copyright © Alvaro Pinares Taype 2025</p>
+        </div>
+    </footer>
+
+    <script src="exposiciones.js"></script>
+</body>
+</html>
