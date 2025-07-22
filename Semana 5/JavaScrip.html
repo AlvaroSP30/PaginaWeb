@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teoría y Conceptos de JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="JavaS.estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +19,7 @@
     <div class="container">
         <div id="table-of-contents" style="background-color: #f0f8ff; border-left: 4px solid #3b82f6; padding: 15px; margin-bottom: 30px; border-radius: 5px;">
             <h2 style="font-size: 1.5em; margin-bottom: 10px; color: #333;">Contenidos del Artículo</h2>
-            </div>
+        </div>
 
         <div class="blog-card">
             <h2>Introducción</h2>
@@ -199,4 +200,16 @@ const miPromesa = new Promise((resolve, reject) => {
 miPromesa
     .then(mensaje => console.log(mensaje))
     .catch(error => console.error(error));</code></pre>
-</li>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="mt-16 py-6 bg-gray-800 text-white text-center">
+        <div class="container mx-auto px-4">
+            <p>&copy; <span id="current-year"></span> Alvaro Pinares Taype | Todos los derechos reservados</p>
+        </div>
+    </footer>
+        <script src="javaScrip.js" defer></script>
+    </body>
+</html>
