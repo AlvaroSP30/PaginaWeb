@@ -459,7 +459,17 @@ if (!file_exists("importante.txt")) {
                     <strong>Crear el proyecto Laravel:</strong>
                     <div class="code-toggle-wrapper">
                         <button class="toggle-code-button">Mostrar Código</button>
-                        <pre class="code-block"><code>laravel</code></pre>
+                        <pre class="code-block"><code>Estudiante
+public function up() 
+{ 
+Schema::create('estudiantes', function (Blueprint $table) { 
+$table->id('idEstudiante'); 
+$table->string('nomEstudiante'); 
+$table->string('dirEstudiante'); 
+$table->string('ciuEstudiante'); 
+$table->timestamps(); 
+}); 
+} </code></pre>
                     </div>
                 </li>
             </ol>
